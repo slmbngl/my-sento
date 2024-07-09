@@ -1,5 +1,5 @@
 <template>
-  <header class="sticky top-0 w-full z-30">
+  <header >
     <NavBar  />
   </header>
   <main>
