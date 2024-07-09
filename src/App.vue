@@ -1,5 +1,7 @@
 <template>
+  <header class="sticky top-0 w-full z-30">
     <NavBar @toggleBlur="handleToggleBlur" />
+  </header>
   <main>
     <section class="relative bg-white z-10">
       <Progress />
