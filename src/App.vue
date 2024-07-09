@@ -1,6 +1,6 @@
 <template>
-  <header class="sticky bg-white top-0 w-full z-30">
-    <NavBar @toggleBlur="handleToggleBlur" />
+  <header class="sticky top-0 w-full z-30">
+    <NavBar  />
   </header>
   <main>
     <section class="relative bg-white z-10">
