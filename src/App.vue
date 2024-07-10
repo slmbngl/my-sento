@@ -75,13 +75,13 @@
 
   </main>
   <footer>
-    <div class="flex">
-      <div class="w-3/5">
+    <div class="flex flex-col lg:flex-row">
+      <div class="w-full lg:w-3/5">
         <Footer class="ml-52" />
-        <div class="bg-sento-gray h-custom rounded-3xl m-10">
-          <div class="flex ml-16">
-            <img class="h-8 mt-10" src="./components/images/reallog.png" alt="">
-            <button class="mixed-button ml-96 mt-10" style="width: 200px;text-align: center;">TOPLANTI PLANLA<svg
+        <div class="bg-sento-gray h-auto rounded-3xl m-10">
+          <div class="flex flex-col md:flex-row md:justify-between items-center">
+            <img class="h-8 mt-4 md:ml-20" src="./components/images/reallog.png" alt="">
+            <button class="mixed-button mt-6 md:mr-16 md:ml-auto" style="width: 200px;text-align: center;">TOPLANTI PLANLA<svg
                 xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512">
                 <path fill="#c3c6d1"
                   d="M96 32V64H48C21.5 64 0 85.5 0 112v48H448V112c0-26.5-21.5-48-48-48H352V32c0-17.7-14.3-32-32-32s-32 14.3-32 32V64H160V32c0-17.7-14.3-32-32-32S96 14.3 96 32zM448 192H0V464c0 26.5 21.5 48 48 48H400c26.5 0 48-21.5 48-48V192z" />
@@ -124,8 +124,8 @@
           </div>
         </div>
       </div>
-      <div class="w-2/5">
-        <div class="column-4 bg-black rounded-3xl mt-40 h-customtwo relative">
+      <div class="w-full pt-0 p-10 lg:w-2/5 lg:p-0">
+        <div class="column-4 bg-black rounded-3xl lg:mt-40 h-auto">
           <div class="bg-white h-96 z-10 w-4/5 ml-16 mt-16"></div>
           <div class="mx-16">
             <a class="text-gray-200 text-base">Adresimiz</a> <br>
@@ -169,8 +169,8 @@
           </div>
         </div>
         <div class="flex">
-          <p class="mt-4 mx-10 text-lg">KVKK</p>
-          <p class="mt-4 text-lg">Çerez Politikası</p>
+          <p class="mx-10 text-lg">KVKK</p>
+          <p class="text-lg">Çerez Politikası</p>
         </div>
       </div>
     </div>
