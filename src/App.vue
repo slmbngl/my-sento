@@ -77,7 +77,7 @@
   <footer>
     <div class="flex flex-col lg:flex-row">
       <div class="w-full lg:w-3/5">
-        <Footer class="ml-52" />
+        <Footer class="ml-auto md:ml-52" />
         <div class="bg-sento-gray h-auto rounded-3xl m-10">
           <div class="flex flex-col md:flex-row md:justify-between items-center">
             <img class="h-8 mt-4 md:ml-20" src="./components/images/reallog.png" alt="">
