@@ -60,7 +60,7 @@
           <div
             class="relative h-4/5 mx-32 rounded-3xl w-full flex justify-center items-center backdrop-opacity-10 backdrop-invert bg-black/70">
             <div class="flex w-1/2 justify-center items-center">
-              <img src="./components/images/Slogo.png" alt="">
+              <img src="" alt="">
             </div>
             <div class="absolute my-16 inset-y-0 w-2 rounded-full border border-gray-400"></div>
             <Mottos />
@@ -80,7 +80,7 @@
         <Footer class="ml-auto" />
         <div class="bg-sento-gray h-auto rounded-3xl m-10">
           <div class="flex flex-col md:flex-row md:justify-between items-center">
-            <img class="h-8 mt-4 md:ml-20" src="./components/images/reallog.png" alt="">
+            <img class="h-8 mt-4 md:ml-20" src="" alt="">
             <button class="mixed-button mt-6 md:mr-16 md:ml-auto" style="width: 200px;text-align: center;">TOPLANTI PLANLA<svg
                 xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512">
                 <path fill="#c3c6d1"
@@ -129,20 +129,20 @@
           <div class="bg-white h-96 z-10 w-4/5 ml-16 mt-16"></div>
           <div class="mx-16">
             <a class="text-gray-200 text-base">Adresimiz</a> <br>
-            <a class="text-gray-200 text-3xl font-bold">Barbaros Mah. Lale Sk. Ağaoğlu My Office NO:2 İç Kapı: 13
-              Ataşehir/İSTANBUL</a>
+            <a class="text-gray-200 text-3xl font-bold">Mevlana Mah. Mimoza Sk. İsmet İki Telli NO:3 İç Kapı: 33
+              Ümraniye/İSTANBUL</a>
           </div>
           <div class="w-9/12 mx-16 h-1 rounded-full border border-gray-400"></div>
           <div class="mx-16">
-            <a class="text-gray-200 text-base">Bizi ara</a> <br>
-            <a class="text-gray-200 text-3xl font-bold">0850 480 87 80</a>
+            <a class="text-gray-200 text-base">Ara Bizi</a> <br>
+            <a class="text-gray-200 text-3xl font-bold">0850 840 67 08</a>
 
           </div>
           <div class="w-9/12 mx-16 h-1 rounded-full border border-gray-400"></div>
 
           <div class="mx-16">
             <a class="text-gray-200 text-base">Bize e-posta gönder</a> <br>
-            <a class="text-gray-200 text-3xl font-bold">info@sento.com.tr</a>
+            <a class="text-gray-200 text-3xl font-bold">info@nesot.com.tr</a>
 
           </div>
           <div class="flex space-x-4 mx-44 my-10">
