@@ -27,7 +27,7 @@
         <div class="grid grid-cols-3">
           <div class="col-span-2 mr-4 ml-4">
             <button type="button"
-              class="text-black w-full bg-sento-gray focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 uppercase">{{
+              class="text-black w-full bg-sento-gray focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2">{{
               $t('read') }}</button>
           </div>
           <div class="col-span-1 mr-4">
