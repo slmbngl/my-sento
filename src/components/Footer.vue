@@ -1,7 +1,7 @@
 <template>
     <div class="relative justify-between items-center">
-        <img src="./images/Notification.png" alt="" class="w-auto mx-auto md:ml-0 md:h-96">
-        <div class="absolute h-64 w-2/5 top-32 left-64 backdrop-blur-md bg-white/10 rounded-full rounded-br-none shadow-2xl ">
+        <img src="./images/Notification.png" alt="" class="w-auto mx-auto md:h-96">
+        <div class="absolute h-64 w-auto top-32 left-2/4 backdrop-blur-md bg-white/10 rounded-full rounded-br-none shadow-2xl ">
             <button class="mixed-button mt-24 ml-8" style="width: 75%;text-align: center;">TOPLANTI PLANLA<svg
                     xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512">
                     <path fill="#c3c6d1"
