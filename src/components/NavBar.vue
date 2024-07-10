@@ -8,7 +8,7 @@
 
 
         <button @click="toggleMenu" data-collapse-toggle="mobile-menu-2" type="button"
-          class="inline-flex justify-end justify-self-end items-right p-2 ml-1 text-gray-500 rounded-lg xl:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          class="inline-flex justify-end justify-self-end items-right p-2 ml-1 text-gray-500 rounded-lg xl:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
           aria-controls="mobile-menu-2" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -32,7 +32,7 @@
           <PopoverGroup class="lg:gap-x-12">
             <Popover class="relative">
               <PopoverButton
-                class="flex items-center gap-x-1 leading-6 py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-sento lg:p-0 dark:text-sento lg:dark:hover:text-sento dark:hover:bg-gray-700 dark:hover:text-sento lg:dark:hover:bg-transparent dark:border-gray-700"
+                class="flex items-center gap-x-1 leading-6 py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-sento lg:p-0 "
                 @mouseover="groupPanelOpen = true" @mouseleave="groupPanelOpen = false">
                 {{ $t('navBtnName') }}
                 <ChevronDownIcon class="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
@@ -66,7 +66,7 @@
           <PopoverGroup class="lg:gap-x-12" @mouseover="groupPanelOpen2 = true" @mouseleave="groupPanelOpen2 = false">
             <Popover class="relative">
               <PopoverButton
-                class="flex items-center gap-x-1 leading-6 py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-sento lg:p-0 dark:text-sento lg:dark:hover:text-sento dark:hover:bg-gray-700 dark:hover:text-sento lg:dark:hover:bg-transparent dark:border-gray-700">
+                class="flex items-center gap-x-1 leading-6 py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-sento lg:p-0 ">
                 {{ $t('navBtnName2') }}
                 <ChevronDownIcon class="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
               </PopoverButton>
@@ -84,7 +84,7 @@
                       <div class="customHover flex-auto pr-5">
                         <a href="#" class="block font-semibold text-white" @mouseover="opup = true"
                           @mouseleave="opup = false">
-                          {{t('navbtn3')}}
+                          {{ t('navbtn3') }}
                           <span class="absolute inset-0" />
                         </a>
                         <hr>
@@ -96,7 +96,7 @@
                       <div class="customHover flex-auto pr-5">
                         <a href="#" class="block font-semibold text-white" @mouseover="opup2 = true"
                           @mouseleave="opup2 = false">
-                          {{t('navbtn4')}}
+                          {{ t('navbtn4') }}
                           <span class="absolute inset-0" />
                         </a>
                         <hr>
@@ -119,7 +119,7 @@
                     <div class="group relative flex items-center gap-x-6 rounded-lg p-4 pb-8 leading-6">
                       <div class="customHover flex-auto pr-5">
                         <a href="#" class="block font-semibold text-white">
-                          {{$t('navbtn5')}}
+                          {{ $t('navbtn5') }}
                           <span class="absolute inset-0" />
 
                         </a>
@@ -131,7 +131,7 @@
                     <div class="group relative flex items-center gap-x-6 rounded-lg p-4 leading-6">
                       <div class="customHover flex-auto pr-5">
                         <a href="#" class="block font-semibold text-white">
-                          {{$t('navbtn6')}}
+                          {{ $t('navbtn6') }}
                           <span class="absolute inset-0" />
                         </a>
 
@@ -152,7 +152,7 @@
                     <div class="group relative flex items-center gap-x-6 rounded-lg p-4 pb-8 leading-6">
                       <div class="customHover flex-auto pr-5">
                         <a href="#" class="block font-semibold text-white">
-                          {{$t('navbtn7')}}
+                          {{ $t('navbtn7') }}
                           <span class="absolute inset-0" />
 
                         </a>
@@ -164,7 +164,7 @@
                     <div class="group relative flex items-center gap-x-6 rounded-lg p-4 leading-6">
                       <div class="customHover flex-auto pr-5">
                         <a href="#" class="block font-semibold text-white">
-                          {{$t('navbtn8')}}
+                          {{ $t('navbtn8') }}
                           <span class="absolute inset-0" />
                         </a>
 
@@ -181,40 +181,40 @@
 
           <li>
             <a href="#"
-              class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-sento lg:p-0 dark:text-sento lg:dark:hover:text-sento dark:hover:bg-gray-700 dark:hover:text-sento lg:dark:hover:bg-transparent dark:border-gray-700"
+              class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-sento lg:p-0 "
               aria-current="page">{{ $t('navBtnName3') }}</a>
           </li>
           <li>
             <a href="#"
-              class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-sento lg:p-0 dark:text-sento lg:dark:hover:text-sento dark:hover:bg-gray-700 dark:hover:text-sento lg:dark:hover:bg-transparent dark:border-gray-700">{{
-              $t('navBtnName4') }}</a>
+              class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-sento lg:p-0 ">{{
+                $t('navBtnName4') }}</a>
           </li>
           <li>
             <a href="#"
-              class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-sento lg:p-0 dark:text-sento lg:dark:hover:text-sento dark:hover:bg-gray-700 dark:hover:text-sento lg:dark:hover:bg-transparent dark:border-gray-700">{{
-              $t('navBtnName5') }}</a>
+              class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-sento lg:p-0 ">{{
+                $t('navBtnName5') }}</a>
           </li>
           <li>
             <a href="#"
-              class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-sento lg:p-0 dark:text-sento lg:dark:hover:text-sento dark:hover:bg-gray-700 dark:hover:text-sento lg:dark:hover:bg-transparent dark:border-gray-700">{{
-              $t('navBtnName6') }}</a>
+              class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-sento lg:p-0 ">{{
+                $t('navBtnName6') }}</a>
           </li>
 
 
         </ul>
 
       </div>
-      <div class="flex sm:w-full md:w-full lg:hidden xl:flex xl:w-auto xl:justify-left flex-wrap justify-center lg:order-1">
+      <div
+        class="flex sm:w-full md:w-full lg:hidden xl:flex xl:w-auto xl:justify-left flex-wrap justify-center lg:order-1">
         <div class="w-full xl:w-auto xl:mt-2 xl:w-3/7 p-2 text-center">
-          <a href="#"
-            class="text-black uppercase dark:text-white bg-sento-gray focus:ring-4 rounded-full p-2 mr-2 dark:hover:bg-gray-700"
+          <a href="#" class="text-black uppercase bg-sento-gray focus:ring-4 rounded-full p-2 mr-2 "
             style="background-color: #EFF1F2;">
-            {{$t('psy') }}
+            {{ $t('psy') }}
           </a>
         </div>
         <div class="xl:w-4/7 p-2 text-center">
           <button class="mixed-button">
-            {{$t('fast') }}
+            {{ $t('fast') }}
             <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512">
               <path fill="#56585e"
                 d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
@@ -292,86 +292,100 @@ function toggleBlur(value) {
 </script>
 
 <style>
-  .taker img {
-    position: absolute;
-    opacity: 1; /* Resim başlangıçta görünür olacak */
-    transition: transform 0.3s ease-in-out; /* Geçiş süresi ve efekti ayarlandı */
+.taker img {
+  position: absolute;
+  opacity: 1;
+  /* Resim başlangıçta görünür olacak */
+  transition: transform 0.3s ease-in-out;
+  /* Geçiş süresi ve efekti ayarlandı */
+}
+
+.taker:hover img {
+  animation: hoverAnimation 0.6s infinite alternate;
+  /* Sürekli animasyon */
+}
+
+@keyframes hoverAnimation {
+  0% {
+    transform: translateX(0) translateY(0);
+    /* Başlangıç konumu */
   }
 
-  .taker:hover img {
-    animation: hoverAnimation 0.6s infinite alternate; /* Sürekli animasyon */
+  100% {
+    transform: translateX(0) translateY(-50%);
+    /* Bitiş konumu */
   }
+}
 
-  @keyframes hoverAnimation {
-    0% {
-      transform: translateX(0) translateY(0); /* Başlangıç konumu */
-    }
-    100% {
-      transform: translateX(0) translateY(-50%); /* Bitiş konumu */
-    }
-  }
-  .customHover{
-    opacity: 1; 
-    transition: transform 0.5s ease-in-out;
-    @apply flex-auto pr-5;
-  }
-  .customHover:hover {
-    transform: translateX(10px) translateY(0);
-  }
-  
-  .mixed-button {
-      position: relative;
-      border: 2px #E61111 solid;
-      text-transform: uppercase;
-      outline: 0;
-      overflow: hidden;
-      background: none;
-      z-index: 0;
-      cursor: pointer;
-      transition: width 0.3s ease-in-out; /* Buton genişliği için geçiş süresi ayarlandı */
-      @apply text-white w-full font-medium rounded-full text-xs px-5 pr-16 py-2.5 text-left me-2 mb-2 uppercase border-2 border-dashed ;
-    }
+.customHover {
+  opacity: 1;
+  transition: transform 0.5s ease-in-out;
+  @apply flex-auto pr-5;
+}
 
-    .mixed-button:hover {
-      width: 105%; /* Hover durumunda buton genişliğini artırdık */
-      text-align: center;
-    }
+.customHover:hover {
+  transform: translateX(10px) translateY(0);
+}
 
-    .mixed-button:before {
-      content: "";
-      position: absolute;
-      @apply bg-sento;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      width: calc(100% - 50px);
-      z-index: -1;
-      transition: width 0.3s ease-in-out; /* Arkaplan genişliği için geçiş süresi ayarlandı */
-      border-radius: 9999px; /* Yuvarlatılmış köşe ekledik */
-    }
+.mixed-button {
+  position: relative;
+  border: 2px #E61111 solid;
+  text-transform: uppercase;
+  outline: 0;
+  overflow: hidden;
+  background: none;
+  z-index: 0;
+  cursor: pointer;
+  transition: width 0.3s ease-in-out;
+  /* Buton genişliği için geçiş süresi ayarlandı */
+  @apply text-white w-full font-medium rounded-full text-xs px-5 pr-16 py-2.5 text-left me-2 mb-2 uppercase border-2 border-dashed;
+}
 
-    .mixed-button:hover:before {
-      width: 100%;
-    }
+.mixed-button:hover {
+  width: 105%;
+  /* Hover durumunda buton genişliğini artırdık */
+  text-align: center;
+}
 
-    .mixed-button svg {
-      position: absolute;
-      right: 5px;
-      top: 8px;
-      fill: #383736;
-      opacity: 1; /* SVG başlangıçta görünür olacak */
-      transition: transform 0.3s ease-in-out; /* Geçiş süresi ve efekti ayarlandı */
-    }
+.mixed-button:before {
+  content: "";
+  position: absolute;
+  @apply bg-sento;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: calc(100% - 50px);
+  z-index: -1;
+  transition: width 0.3s ease-in-out;
+  /* Arkaplan genişliği için geçiş süresi ayarlandı */
+  border-radius: 9999px;
+  /* Yuvarlatılmış köşe ekledik */
+}
 
-    .mixed-button:hover svg {
-      top: -18px;
-      transform: translateX(-10px) translateY(100%); /* Sağa doğru 30px hareket */
-      
-    }
+.mixed-button:hover:before {
+  width: 100%;
+}
 
-    .mixed-button:hover svg:hover {
-      transform: translateY(0) translateX(0); /* İkonun ilk konumuna geri dönmesi */
-    }
+.mixed-button svg {
+  position: absolute;
+  right: 5px;
+  top: 8px;
+  fill: #383736;
+  opacity: 1;
+  /* SVG başlangıçta görünür olacak */
+  transition: transform 0.3s ease-in-out;
+  /* Geçiş süresi ve efekti ayarlandı */
+}
+
+.mixed-button:hover svg {
+  top: -18px;
+  transform: translateX(-10px) translateY(100%);
+  /* Sağa doğru 30px hareket */
+
+}
+
+.mixed-button:hover svg:hover {
+  transform: translateY(0) translateX(0);
+  /* İkonun ilk konumuna geri dönmesi */
+}
 </style>
-
- 
