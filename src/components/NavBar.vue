@@ -2,7 +2,7 @@
   <nav class="relative bg-white border-gray-200 px-4 lg:px-6 py-2.5 shadow-md mb-2">
     <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
       <a href="#" class="taker flex items-center">
-        <img src="./images/sento.jpg" class="img mr-4 h-6 sm:h-9" alt="Sento Logo" />
+        <img src="" class="img mr-4 h-6 sm:h-9" alt="Sento Logo" />
       </a>
       <div class="flex items-center lg:order-2">
 
