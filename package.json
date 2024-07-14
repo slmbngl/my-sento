@@ -18,7 +18,8 @@
     "@heroicons/vue": "^2.1.4",
     "swiper": "^11.1.4",
     "vue": "^3.4.21",
-    "vue-i18n": "^9.13.1"
+    "vue-i18n": "^9.13.1",
+    "vue-router": "^4.4.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",

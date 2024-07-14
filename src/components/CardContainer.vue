@@ -24,41 +24,62 @@
     </div>
 </template>
   
-  <script>
-  import CardComponent from './CardComponent.vue';
-  
-  export default {
-    components: {
-      CardComponent,
+<script>
+import CardComponent from './CardComponent.vue';
+
+export default {
+  components: {
+    CardComponent,
+  },
+  data() {
+    return {
+      cards: [
+        { title: 'Çalışan Destek Programı', description: 'Çalışan Destek Programı; çalışanlarınızın ev, iş ve sosyal hayatta yaşadıkları, kimi zaman iş performansını kimi zaman sosyal hayatı etkileyen psikolojik durumları “gizlilik” çerçevesinde çözmelerine yardımcı olur.' },
+        { title: 'Travma Sonrası Destek Programı', description: 'Çalışan Destek Programı; çalışanlarınızın ev, iş ve sosyal hayatta yaşadıkları, kimi zaman iş performansını kimi zaman sosyal hayatı etkileyen psikolojik durumları “gizlilik” çerçevesinde çözmelerine yardımcı olur.' },
+        { title: 'Ruh Sağlığı Politikaları', description: 'Travmatik olaylar genellikle önceden haber verilmez...' },
+        { title: 'Çeşitlilik ve Kapsayıcılık Politikaları', description: 'Travmatik olaylar genellikle önceden haber verilmez...' },
+        { title: 'İş Yeri Psikolojisi', description: 'Travmatik olaylar genellikle önceden haber verilmez...' },
+        { title: 'Yeni Politikalar', description: 'Travmatik olaylar genellikle önceden haber verilmez...' },
+      ],
+      activeIndex: 1, // Start with the first card
+      autoplayInterval: null, // Interval reference
+      autoplayDelay: 3000, // Autoplay delay in milliseconds (5 seconds)
+    };
+  },
+  mounted() {
+    // Start autoplay when component is mounted
+    this.startAutoplay();
+  },
+  methods: {
+    startAutoplay() {
+      this.autoplayInterval = setInterval(() => {
+        this.nextCard();
+      }, this.autoplayDelay);
     },
-    data() {
-      return {
-        cards: [
-          { title: 'Çalışan Destek Programı', description: 'Çalışan Destek Programı; çalışanlarınızın ev, iş ve sosyal hayatta yaşadıkları, kimi zaman iş performansını kimi zaman sosyal hayatı etkileyen psikolojik durumları “gizlilik” çerçevesinde çözmelerine yardımcı olur.' },
-          { title: 'Travma Sonrası Destek Programı', description: 'Çalışan Destek Programı; çalışanlarınızın ev, iş ve sosyal hayatta yaşadıkları, kimi zaman iş performansını kimi zaman sosyal hayatı etkileyen psikolojik durumları “gizlilik” çerçevesinde çözmelerine yardımcı olur.' },
-          { title: 'Ruh Sağlığı Politikaları', description: 'Travmatik olaylar genellikle önceden haber verilmez...' },
-          { title: 'Çeşitlilik ve Kapsayıcılık Politikaları', description: 'Travmatik olaylar genellikle önceden haber verilmez...' },
-          { title: 'İş Yeri Psikolojisi', description: 'Travmatik olaylar genellikle önceden haber verilmez...' },
-          { title: 'Yeni Politikalar', description: 'Travmatik olaylar genellikle önceden haber verilmez...' },
-        ],
-        activeIndex: 1,
-      };
+    stopAutoplay() {
+      clearInterval(this.autoplayInterval);
     },
-    methods: {
-      prevCard() {
-        if (this.activeIndex > 0) {
-          this.activeIndex--;
-        }
-      },
-      nextCard() {
-        if (this.activeIndex < this.cards.length - 1) {
-          this.activeIndex++;
-        }
-      },
+    prevCard() {
+      if (this.activeIndex > 0) {
+        this.activeIndex--;
+      } else {
+        this.activeIndex = this.cards.length - 1;
+      }
     },
-  };
-  </script>
-  
+    nextCard() {
+      if (this.activeIndex < this.cards.length - 1) {
+        this.activeIndex++;
+      } else {
+        this.activeIndex = 0;
+      }
+    },
+  },
+  beforeDestroy() {
+    // Clear interval when component is destroyed to prevent memory leaks
+    clearInterval(this.autoplayInterval);
+  },
+};
+</script>
   <style scoped>
   /* İsteğe bağlı stil düzenlemeleri */
   </style>

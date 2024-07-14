@@ -1,24 +1,13 @@
-import { createApp } from 'vue'
 import './style.css'
+
+import { createApp } from 'vue'
 import App from './App.vue'
+import router from './router'
+
 import { createI18n } from 'vue-i18n'
 import en from './locales/en.json'
 import tr from './locales/tr.json'
 
-/* import the fontawesome core */
-import { library } from '@fortawesome/fontawesome-svg-core'
-
-/* import font awesome icon component */
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-/* import specific icons */
-import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
-
-import 'swiper/swiper-bundle.css'
-/* add icons to the library */
-library.add(faUserSecret)
-
-// localStorage'dan dil bilgisini kontrol et
 let userLang = localStorage.getItem('selectedLanguage');
 
 if (!userLang) {
@@ -36,8 +25,12 @@ const i18n = createI18n({
   },
 });
 
-const app = createApp(App);
-app.use(i18n);
-app.mount('#app');
-app.config.globalProperties.$currentLanguage = currentLanguage; 
-app.component('font-awesome-icon', FontAwesomeIcon);
+
+
+const app = createApp(App)
+
+app.use(router)
+
+app.use(i18n)
+
+app.mount('#app')
