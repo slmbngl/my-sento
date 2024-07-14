@@ -6,7 +6,7 @@
     <main>
       <section class="relative bg-white z-10">
         <Progress />
-        <div class="flex md:mt-0 lg:mt-20 pl-20 pb-5">
+        <div class="flex mt-0 xl:mt-20 pl-20 pb-5">
           <div class="w-3/4 mr-0 md:mr-20">
             <p class="text-7xl md:text-9xl font-extrabold text-left text-black font-qubi">Faydaları.</p>
             <p class="text-xl font-normal text-left text-black font-qubi">Çalışanın, zihnini meşgul eden kişisel
@@ -17,7 +17,7 @@
               verimliliği ve kârlılığı artırmak için kurumlara ve yöneticilere yardımcı oluyor..</p>
           </div>
           <div class="w-1/4 mt-0 lg:mt-10">
-            <div class="hidden lg:block">
+            <div class="hidden lg:block mb-0">
               <Slider />
             </div>
           </div>

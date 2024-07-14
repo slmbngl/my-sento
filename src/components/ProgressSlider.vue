@@ -1,12 +1,12 @@
 <template>
-  <div class="relative overflow-hidden" style="height: 110vh;">
+  <div class="relative overflow-hidden h-screen" >
     <template v-for="(item, index) in items" :key="index">
       <TransitionRoot :show="active === index" enter="transition ease-out duration-300 transform"
         enterFrom="translate-x-full" enterTo="translate-x-0" leave="transition ease-in duration-300 transform absolute"
         leaveFrom="translate-x-0" leaveTo="-translate-x-full" @before-enter="heightFix()" class="absolute inset-0">
         <div class="relative bg-sento rounded-3xl mx-8 px-14">
           <div class="flex flex-col lg:flex-row text-white z-0 lg:text-left text-center">
-            <div class="w-full lg:w-3/5 mt-0 mb-0 xl:mt-40 xl:mb-20">
+            <div class="w-full lg:w-3/5 mt-0 mb-0 pb-20 xl:pb-0 xl:mt-40 xl:mb-20">
               <p class="text-6xl md:text-7xl font-semibold py-3">{{ item.letter }}</p>
               <p class="hidden md:block text-xl font-normal py-3">{{ item.letter2 }}</p>
               <button class="mixed-button">
@@ -23,7 +23,7 @@
             </div>
           </div>
 
-          <div class="mx-auto mt-8 flex justify-center space-x-4 z-10 bg-sento mt-0">
+          <div class="mx-auto flex justify-center space-x-4 z-10 bg-sento mt-0">
             <template v-for="(item, index) in items" :key="index">
               <button v-if="getPositionClass(index) !== 'inactive'"
                 class="group relative rounded p-2 focus:outline-none focus-visible:ring focus-visible:ring-indigo-300"
