@@ -4,7 +4,7 @@
       <TransitionRoot :show="active === index" enter="transition ease-out duration-300 transform"
         enterFrom="translate-x-full" enterTo="translate-x-0" leave="transition ease-in duration-300 transform absolute"
         leaveFrom="translate-x-0" leaveTo="-translate-x-full" @before-enter="heightFix()" class="absolute inset-0">
-        <div class="relative bg-sento rounded-3xl mx-8 px-14">
+        <div class="relative bg-sento rounded-3xl mx-6 px-0 sm:mx-8 sm:px-14">
           <div class="flex justify-center lg:justify-start text-center lg:text-left text-white z-0">
             <div class="w-3/5 xl:mt-40 xl:mb-20">
               <p class="text-6xl xl:text-7xl font-semibold py-3">{{ item.letter }}</p>

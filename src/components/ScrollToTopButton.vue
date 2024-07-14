@@ -1,6 +1,6 @@
 <template>
     <button v-if="isVisible" @click="scrollToTop"
-        class="btn fixed bottom-4 right-4 text-black p-3 rounded-full shadow-lg hover:bg-blue-700 transition duration-300">
+        class="btn fixed bottom-4 right-10 text-black p-3 rounded-full shadow-lg hover:bg-blue-700 transition duration-300">
         Yukarı Çık
         <svg xmlns="http://www.w3.org/2000/svg" height="24" width="18" viewBox="0 0 384 512">
             <path fill="#c3c6d1"
