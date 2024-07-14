@@ -1,22 +1,25 @@
 <template>
-    <div :class="{ 'blurred': isBlurred }" class="min-h-screen relative">
+  <div :class="{ 'blurred': isBlurred }" class="min-h-screen relative">
     <header class="sticky top-0 w-full z-30">
       <NavBar @toggleBlur="handleToggleBlur" />
     </header>
     <main>
       <section class="relative bg-white z-10">
         <Progress />
-        <div class="flex pl-20 mt-20 pb-5">
-          <div class="w-3/4 mr-20">
-            <p class="text-9xl font-extrabold text-left text-black font-qubi">Faydaları.</p>
-            <p class="text-xl font-normal text-left text-black font-qubi">Çalışanın, zihnini meşgul eden kişisel sorunları
+        <div class="flex md:mt-0 lg:mt-20 pl-20 pb-5">
+          <div class="w-3/4 mr-0 md:mr-20">
+            <p class="text-7xl md:text-9xl font-extrabold text-left text-black font-qubi">Faydaları.</p>
+            <p class="text-xl font-normal text-left text-black font-qubi">Çalışanın, zihnini meşgul eden kişisel
+              sorunları
               çözüldüğünde işine daha iyi konsantre olur..</p>
             <p class="text-sm font-normal text-left text-black font-qubi">Çalışan Destek Programları, iş-yaşam dengesini
               kurma konusunda geliştirilmiş en etkin çözümlerden biri olarak, işyerinde performansı dolayısı ile
               verimliliği ve kârlılığı artırmak için kurumlara ve yöneticilere yardımcı oluyor..</p>
           </div>
-          <div class="w-1/4 mt-10">
-            <Slider />
+          <div class="w-1/4 mt-0 lg:mt-10">
+            <div class="hidden lg:block">
+              <Slider />
+            </div>
           </div>
         </div>
         <div class="relative mt-28 ml-28 mb-5 ">
@@ -30,14 +33,14 @@
             <p class="ml-4 text-5xl font-semibold ">Onlar Bizi Seçti</p>
           </div>
         </div>
-  
+
         <div class="border-b-2 py-10 shadow-2xl" style="border-radius: 2.5rem;">
           <div class="mx-28 ">
             <IconSlider />
           </div>
           <div class="border-b-2"></div>
         </div>
-  
+
         <div class="bg-sento-sgray mb-28">
           <Comments />
         </div>
@@ -45,7 +48,8 @@
           <div class="relative w-3/5 ml-28 mb-5 ">
             <div class="absolute w-2 h-1/6 rounded-full top-0 left-0 border border-red-600"></div>
             <p class="ml-4 text-5xl font-semibold mt-4">Birkaç cümlede bizden bahsetmek gerekirse;</p>
-            <p class="mt-8 text-xl font-normal text-left text-black font-qubi">İş arkadaşlarımızın performans artışında bu
+            <p class="mt-8 text-xl font-normal text-left text-black font-qubi">İş arkadaşlarımızın performans artışında
+              bu
               kadar fark yaratacağını bilmiyordum. Sento ekibi ile çalışmamızın bizlere çok fazla avantajı oldu.
               Kendilerine sonsuz bir teşekkürü içtenlikle borç bilirim.</p>
             <button class="mixed-button mt-10 ml-2" style="width: 200px;text-align: center;">BİZİ TANI <svg
@@ -71,9 +75,9 @@
         <div class="fixed right-0 bottom-0 z-30">
           <LanguageSelector />
         </div>
-  
+
       </section>
-  
+
     </main>
     <footer>
       <div class="flex flex-col lg:flex-row">
@@ -82,8 +86,8 @@
           <div class="bg-sento-gray h-auto rounded-3xl m-10">
             <div class="flex flex-col md:flex-row md:justify-between items-center">
               <img class="h-8 mt-4 md:ml-20" src="" alt="">
-              <button class="mixed-button mt-6 md:mr-16 md:ml-auto" style="width: 200px;text-align: center;">TOPLANTI PLANLA<svg
-                  xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512">
+              <button class="mixed-button mt-6 md:mr-16 md:ml-auto" style="width: 200px;text-align: center;">TOPLANTI
+                PLANLA<svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512">
                   <path fill="#c3c6d1"
                     d="M96 32V64H48C21.5 64 0 85.5 0 112v48H448V112c0-26.5-21.5-48-48-48H352V32c0-17.7-14.3-32-32-32s-32 14.3-32 32V64H160V32c0-17.7-14.3-32-32-32S96 14.3 96 32zM448 192H0V464c0 26.5 21.5 48 48 48H400c26.5 0 48-21.5 48-48V192z" />
                 </svg></button>
@@ -97,9 +101,9 @@
                   </div>
                 </ul>
               </div>
-  
+
               <div class="w-2 h-1/8 rounded-full right-0 border border-gray-400"></div>
-  
+
               <div>
                 <ul>
                   <li class="mb-4"><a class="text-sento text-sm" href="#">Hizmetlerimiz</a></li>
@@ -108,9 +112,9 @@
                   </div>
                 </ul>
               </div>
-  
+
               <div class="w-2 h-1/8 rounded-full right-0 border border-gray-400"></div>
-  
+
               <div>
                 <ul>
                   <li class="mb-4"><a class="text-sento text-sm" href="#">Menü</a></li>
@@ -137,14 +141,14 @@
             <div class="mx-16">
               <a class="text-gray-200 text-base">Ara Bizi</a> <br>
               <a class="text-gray-200 text-3xl font-bold">0850 840 67 08</a>
-  
+
             </div>
             <div class="w-9/12 mx-16 h-1 rounded-full border border-gray-400"></div>
-  
+
             <div class="mx-16">
               <a class="text-gray-200 text-base">Bize e-posta gönder</a> <br>
               <a class="text-gray-200 text-3xl font-bold">info@nesot.com.tr</a>
-  
+
             </div>
             <div class="flex space-x-4 mx-44 my-10">
               <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 512 512">
@@ -177,49 +181,48 @@
       </div>
     </footer>
     <div v-if="isBlurred" class="absolute inset-0 z-20 backdrop-brightness-50 pointer-events-none"></div>
-  
+
     <ScrollToTopButton class="z-20" />
   </div>
-  </template>
-  
-  <script setup>
-  import LanguageSelector from '../components/LanguageSelector.vue';
-  import NavBar from '../components/NavBar.vue';
-  import Progress from '../components/ProgressSliderPage.vue';
-  import Slider from '../components/Slide.vue';
-  import CardContainer from '../components/CardContainer.vue';
-  import IconSlider from '../components/IconSlider.vue'
-  import Comments from '../components/Comments.vue';
-  import ScrollToTopButton from '../components/ScrollToTopButton.vue';
-  import Mottos from '../components/Mottos.vue';
-  import Footer from '../components/Footer.vue';
-  import { ref } from 'vue';
-  
-  const isBlurred = ref(false);
-  
-  function handleToggleBlur(value) {
-    isBlurred.value = value;
-  }
-  const corporateItems = [
-    { text: 'Hakkımızda', href: '#' },
-    { text: 'Misyon & Vizyon & Değerler', href: '#' },
-  ];
-  
-  const servicesItems = [
-    { text: 'Çalışan Destek Programı', href: '#' },
-    { text: 'İşyeri Psikoloğu', href: '#' },
-    { text: 'Travma Sonrası Destek Programı', href: '#' },
-    { text: 'Psikoloji Söyleşileri', href: '#' },
-    { text: 'Sağlıklı Beslenme Söyleşileri', href: '#' },
-    { text: 'Ruh Sağlığı Politikaları', href: '#' },
-    { text: 'Çeşitlilik ve Kapsayıcılık Politikaları', href: '#' },
-  ];
-  
-  const menuItems = [
-    { text: 'Blog', href: '#' },
-    { text: 'Referanslarımız', href: '#' },
-    { text: 'Kariyer', href: '#' },
-    { text: 'S.S.S', href: '#' },
-  ];
-  </script>
-  
+</template>
+
+<script setup>
+import LanguageSelector from '../components/LanguageSelector.vue';
+import NavBar from '../components/NavBar.vue';
+import Progress from '../components/ProgressSliderPage.vue';
+import Slider from '../components/Slide.vue';
+import CardContainer from '../components/CardContainer.vue';
+import IconSlider from '../components/IconSlider.vue'
+import Comments from '../components/Comments.vue';
+import ScrollToTopButton from '../components/ScrollToTopButton.vue';
+import Mottos from '../components/Mottos.vue';
+import Footer from '../components/Footer.vue';
+import { ref } from 'vue';
+
+const isBlurred = ref(false);
+
+function handleToggleBlur(value) {
+  isBlurred.value = value;
+}
+const corporateItems = [
+  { text: 'Hakkımızda', href: '#' },
+  { text: 'Misyon & Vizyon & Değerler', href: '#' },
+];
+
+const servicesItems = [
+  { text: 'Çalışan Destek Programı', href: '#' },
+  { text: 'İşyeri Psikoloğu', href: '#' },
+  { text: 'Travma Sonrası Destek Programı', href: '#' },
+  { text: 'Psikoloji Söyleşileri', href: '#' },
+  { text: 'Sağlıklı Beslenme Söyleşileri', href: '#' },
+  { text: 'Ruh Sağlığı Politikaları', href: '#' },
+  { text: 'Çeşitlilik ve Kapsayıcılık Politikaları', href: '#' },
+];
+
+const menuItems = [
+  { text: 'Blog', href: '#' },
+  { text: 'Referanslarımız', href: '#' },
+  { text: 'Kariyer', href: '#' },
+  { text: 'S.S.S', href: '#' },
+];
+</script>

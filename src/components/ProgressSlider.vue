@@ -6,8 +6,8 @@
         leaveFrom="translate-x-0" leaveTo="-translate-x-full" @before-enter="heightFix()" class="absolute inset-0">
         <div class="relative bg-sento rounded-3xl mx-8 px-14">
           <div class="flex flex-col lg:flex-row text-white z-0 lg:text-left text-center">
-            <div class="w-full lg:w-3/5 mt-0 mb-10 xl:mt-40 xl:mb-20">
-              <p class="text-7xl font-semibold py-3">{{ item.letter }}</p>
+            <div class="w-full lg:w-3/5 mt-0 mb-0 xl:mt-40 xl:mb-20">
+              <p class="text-6xl md:text-7xl font-semibold py-3">{{ item.letter }}</p>
               <p class="hidden md:block text-xl font-normal py-3">{{ item.letter2 }}</p>
               <button class="mixed-button">
                 {{ $t('fast') }}
