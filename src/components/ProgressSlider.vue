@@ -1,33 +1,28 @@
 <template>
   <div class="relative overflow-hidden" style="height: 110vh;">
     <template v-for="(item, index) in items" :key="index">
-      <TransitionRoot
-        :show="active === index"
-        enter="transition ease-out duration-300 transform"
-        enterFrom="translate-x-full"
-        enterTo="translate-x-0"
-        leave="transition ease-in duration-300 transform absolute"
-        leaveFrom="translate-x-0"
-        leaveTo="-translate-x-full"
-        @before-enter="heightFix()"
-        class="absolute inset-0"
-      >
+      <TransitionRoot :show="active === index" enter="transition ease-out duration-300 transform"
+        enterFrom="translate-x-full" enterTo="translate-x-0" leave="transition ease-in duration-300 transform absolute"
+        leaveFrom="translate-x-0" leaveTo="-translate-x-full" @before-enter="heightFix()" class="absolute inset-0">
         <div class="relative bg-sento rounded-3xl mx-8 px-14">
-          <div class="flex text-white z-0">
-            <div class="w-3/5 mt-40 mb-20">
+          <div class="flex flex-col lg:flex-row text-white z-0 lg:text-left text-center">
+            <div class="w-full lg:w-3/5 mt-0 mb-10 xl:mt-40 xl:mb-20">
               <p class="text-7xl font-semibold py-3">{{ item.letter }}</p>
-              <p class="text-xl font-normal py-3">{{ item.letter2 }}</p>
+              <p class="hidden md:block text-xl font-normal py-3">{{ item.letter2 }}</p>
               <button class="mixed-button">
                 {{ $t('fast') }}
                 <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512">
-                  <path fill="#56585e" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+                  <path fill="#56585e"
+                    d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
                 </svg>
               </button>
             </div>
-            <div class="w-2/5 bottom-0 right-0 mr-0 pr-0 pl-0 ml-0 mt-20 absolute z-0">
-              <img class="rounded-xl ml-auto mr-0 pointer-events-none" :src="item.img" width="430" height="470" :alt="item.desc" />
+            <div class="absolute w-full lg:w-2/5 bottom-0 right-0 lg:mr-0 pr-0 pl-0 ml-0 mt-20 z-0">
+              <img class="hidden lg:block rounded-xl ml-auto mr-0 pointer-events-none" :src="item.img" width="430"
+                height="470" :alt="item.desc" />
             </div>
           </div>
+
           <div class="mx-auto mt-8 flex justify-center space-x-4 z-10 bg-sento mt-0">
             <template v-for="(item, index) in items" :key="index">
               <button v-if="getPositionClass(index) !== 'inactive'"
