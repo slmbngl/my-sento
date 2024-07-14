@@ -7,8 +7,8 @@
       <section class="relative bg-white z-10">
         <Progress />
         <div class="flex mt-0 xl:mt-20 pl-20 pb-5">
-          <div class="w-full md:w-3/4 mr-0 md:mr-20">
-            <p class="text-7xl md:text-9xl font-extrabold text-left text-black font-qubi">Faydaları.</p>
+          <div class="w-3/4 lg:text-left text-center mr-0 md:mr-20">
+            <p class="text-7xl sm:text-9xl font-extrabold text-left text-black font-qubi">Faydaları.</p>
             <p class="text-xl font-normal text-left text-black font-qubi">Çalışanın, zihnini meşgul eden kişisel
               sorunları
               çözüldüğünde işine daha iyi konsantre olur..</p>
@@ -92,7 +92,7 @@
                     d="M96 32V64H48C21.5 64 0 85.5 0 112v48H448V112c0-26.5-21.5-48-48-48H352V32c0-17.7-14.3-32-32-32s-32 14.3-32 32V64H160V32c0-17.7-14.3-32-32-32S96 14.3 96 32zM448 192H0V464c0 26.5 21.5 48 48 48H400c26.5 0 48-21.5 48-48V192z" />
                 </svg></button>
             </div>
-            <div class="flex gap-8 columns-3 mt-10 mx-16">
+            <div class="flex flex-col md:flex-row md:gap-8 mt-10 mx-16">
               <div>
                 <ul>
                   <li class="mb-4"><a class="text-sento text-sm" href="#">Kurumsal</a></li>

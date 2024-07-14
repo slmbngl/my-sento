@@ -5,9 +5,9 @@
         enterFrom="translate-x-full" enterTo="translate-x-0" leave="transition ease-in duration-300 transform absolute"
         leaveFrom="translate-x-0" leaveTo="-translate-x-full" @before-enter="heightFix()" class="absolute inset-0">
         <div class="relative bg-sento rounded-3xl mx-8 px-14">
-          <div class="flex flex-col lg:flex-row text-white z-0 lg:text-left text-center">
-            <div class="w-full lg:w-3/5 mt-0 mb-0 pb-20 xl:pb-0 xl:mt-40 xl:mb-20">
-              <p class="text-6xl md:text-7xl font-semibold py-3">{{ item.letter }}</p>
+          <div class="flex justify-center lg:justify-start text-center lg:text-left text-white z-0">
+            <div class="w-3/5 xl:mt-40 xl:mb-20">
+              <p class="text-6xl xl:text-7xl font-semibold py-3">{{ item.letter }}</p>
               <p class="hidden md:block text-xl font-normal py-3">{{ item.letter2 }}</p>
               <button class="mixed-button">
                 {{ $t('fast') }}
@@ -17,9 +17,9 @@
                 </svg>
               </button>
             </div>
-            <div class="absolute w-full lg:w-2/5 bottom-0 right-0 lg:mr-0 pr-0 pl-0 ml-0 mt-20 z-0">
-              <img class="hidden lg:block rounded-xl ml-auto mr-0 pointer-events-none" :src="item.img" width="430"
-                height="470" :alt="item.desc" />
+            <div class="hidden lg:block w-2/5 bottom-0 right-0 mr-0 pr-0 pl-0 ml-0 mt-20 absolute z-0">
+              <img class="rounded-xl ml-auto mr-0 pointer-events-none" :src="item.img" width="430" height="470"
+                :alt="item.desc" />
             </div>
           </div>
 
