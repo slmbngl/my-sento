@@ -6,8 +6,8 @@
     <main>
       <section class="relative bg-white z-10">
         <Progress />
-        <div class="flex mt-0 xl:mt-20 pl-20 pb-5">
-          <div class="w-3/4 lg:text-left text-center mr-0 md:mr-20">
+        <div class="flex mt-0 xl:mt-20 px-8 md:px-0 md:pl-20 pb-0 md:pb-5">
+          <div class="w-3/4 lg:text-left mr-0 md:mr-20">
             <p class="text-7xl sm:text-9xl font-extrabold text-left text-black font-qubi">Faydaları.</p>
             <p class="text-xl font-normal text-left text-black font-qubi">Çalışanın, zihnini meşgul eden kişisel
               sorunları

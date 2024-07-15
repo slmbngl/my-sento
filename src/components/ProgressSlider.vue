@@ -1,5 +1,5 @@
 <template>
-  <div class="relative overflow-hidden h-auto mb-10 md:mb-0 lg:h-screen" >
+  <div class="relative overflow-hidden h-auto mb-10 md:mb-0 xl:h-screen" >
     <template v-for="(item, index) in items" :key="index">
       <TransitionRoot :show="active === index" enter="transition ease-out duration-10000 transform"
         enterFrom="translate-x-full" enterTo="translate-x-0" leave="transition ease-in duration-10000 transform absolute"
@@ -19,7 +19,7 @@
               </button>
             </div>
             </div>
-            <div class="hidden lg:block w-2/5 bottom-0 right-0 mr-0 pr-0 pl-0 ml-0 mt-20 absolute z-0">
+            <div class="hidden md:block w-2/5 bottom-0 right-0 mr-0 pr-0 pl-0 ml-0 mt-20 absolute z-0">
               <img class="rounded-xl ml-auto mr-0 pointer-events-none" :src="item.img" width="430" height="470"
                 :alt="item.desc" />
             </div>
