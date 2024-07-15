@@ -4,11 +4,12 @@
       <TransitionRoot :show="active === index" enter="transition ease-out duration-300 transform"
         enterFrom="translate-x-full" enterTo="translate-x-0" leave="transition ease-in duration-300 transform absolute"
         leaveFrom="translate-x-0" leaveTo="-translate-x-full" @before-enter="heightFix()" class="absolute inset-0">
-        <div class="relative bg-sento rounded-3xl mx-6 px-0 sm:mx-8 sm:px-14">
-          <div class="flex justify-center lg:justify-start text-center lg:text-left text-white z-0">
+        <div class="relative bg-sento rounded-3xl mx-0 px-0 sm:mx-8 sm:px-14">
+          <div class="flex justify-center md:justify-start text-left text-white z-0">
             <div class="w-3/5 xl:mt-40 xl:mb-20">
-              <p class="text-6xl xl:text-7xl font-semibold py-3">{{ item.letter }}</p>
-              <p class="hidden md:block text-xl font-normal py-3">{{ item.letter2 }}</p>
+              <p class="text-3xl md:text-6xl xl:text-7xl font-normal sm:font-semibold py-3">{{ item.letter }}</p>
+              <p class="text-lg md:text-xl font-normal py-3">{{ item.letter2 }}</p>
+              <div class="text-center md:text-left md:justify-start">
               <button class="mixed-button">
                 {{ $t('fast') }}
                 <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512">
@@ -16,6 +17,7 @@
                     d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
                 </svg>
               </button>
+            </div>
             </div>
             <div class="hidden lg:block w-2/5 bottom-0 right-0 mr-0 pr-0 pl-0 ml-0 mt-20 absolute z-0">
               <img class="rounded-xl ml-auto mr-0 pointer-events-none" :src="item.img" width="430" height="470"
@@ -202,7 +204,7 @@ button .absolute {
   z-index: 0;
   cursor: pointer;
   transition: width 0.3s ease-in-out;
-  @apply text-sento w-1/4 font-medium rounded-full text-xs px-5 my-3 text-left me-2 mb-2 uppercase border-2 border-dashed;
+  @apply text-sento w-48 lg:w-1/4 font-medium rounded-full text-xs px-5 my-3 text-left me-2 mb-2 uppercase border-2 border-dashed;
 }
 
 .mixed-button:hover {
