@@ -6,9 +6,9 @@
     <main>
       <section class="relative bg-white z-10">
         <Progress />
-        <div class="flex mt-0 xl:mt-20 px-8 md:px-0 md:pl-20 pb-0 md:pb-5">
-          <div class="w-3/4 lg:text-left mr-0 md:mr-20">
-            <p class="text-7xl sm:text-9xl font-extrabold text-left text-black font-qubi">Faydaları.</p>
+        <div class="flex flex-col md:flex-row mt-0 xl:mt-20 px-8 md:px-0 md:pl-8 lg:pl-20 pb-0 md:pb-5">
+          <div class="w-3/4 lg:text-left mr-0 md:mr-9 lg:mr-20">
+            <p class="text-6xl sm:text-9xl font-extrabold text-left text-black font-qubi">Faydaları.</p>
             <p class="text-xl font-normal text-left text-black font-qubi">Çalışanın, zihnini meşgul eden kişisel
               sorunları
               çözüldüğünde işine daha iyi konsantre olur..</p>
@@ -16,11 +16,18 @@
               kurma konusunda geliştirilmiş en etkin çözümlerden biri olarak, işyerinde performansı dolayısı ile
               verimliliği ve kârlılığı artırmak için kurumlara ve yöneticilere yardımcı oluyor..</p>
           </div>
-          <div class="w-1/4 mt-0 lg:mt-10">
-            <div class="hidden lg:block mb-0">
+          <div class="w-full md:w-1/4 flex flex-col md:flex-col items-center md:items-start justify-center">
+            <!-- Yuvarlak kırmızı toplar -->
+            <div class="flex flex-col items-center justify-center space-y-6 mt-10 xl:mt-0 ml-0 md:ml-12">
+              <div class="h-10 w-10 bg-red-500 rounded-full"></div>
+              <div class="h-14 w-14 bg-red-500 rounded-full"></div>
+            </div>
+            <!-- Slider Bileşeni -->
+            <div class="w-40 md:w-full mt-10 md:mt-5 flex">
               <Slider />
             </div>
           </div>
+
         </div>
         <div class="relative mt-28 ml-28 mb-5 ">
           <div class="absolute w-2 h-1/2 rounded-full top-0 left-0  border border-red-600"></div>
@@ -180,7 +187,7 @@
       </div>
     </footer>
     <div v-if="isBlurred" class="absolute inset-0 z-20 backdrop-brightness-50 pointer-events-none"></div>
-    
+
     <ScrollToTopButton class="z-20" />
   </div>
 </template>
