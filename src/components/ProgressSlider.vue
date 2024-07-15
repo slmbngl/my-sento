@@ -1,14 +1,14 @@
 <template>
-  <div class="relative overflow-hidden h-screen" >
+  <div class="relative overflow-hidden h-auto mb-10 md:mb-0 lg:h-screen" >
     <template v-for="(item, index) in items" :key="index">
-      <TransitionRoot :show="active === index" enter="transition ease-out duration-300 transform"
-        enterFrom="translate-x-full" enterTo="translate-x-0" leave="transition ease-in duration-300 transform absolute"
-        leaveFrom="translate-x-0" leaveTo="-translate-x-full" @before-enter="heightFix()" class="absolute inset-0">
-        <div class="relative bg-sento rounded-3xl mx-0 px-0 sm:mx-8 sm:px-14">
+      <TransitionRoot :show="active === index" enter="transition ease-out duration-10000 transform"
+        enterFrom="translate-x-full" enterTo="translate-x-0" leave="transition ease-in duration-10000 transform absolute"
+        leaveFrom="translate-x-0" leaveTo="-translate-x-full" @before-enter="heightFix()" class="inset-0">
+        <div class="relative bg-sento rounded-3xl mx-4 px-0 sm:mx-8 sm:px-14">
           <div class="flex justify-center md:justify-start text-left text-white z-0">
             <div class="w-3/5 xl:mt-40 xl:mb-20">
               <p class="text-3xl md:text-6xl xl:text-7xl font-normal sm:font-semibold py-3">{{ item.letter }}</p>
-              <p class="text-lg md:text-xl font-normal py-3">{{ item.letter2 }}</p>
+              <p class="text-lg md:text-xl font-light sm:font-normal py-3">{{ item.letter2 }}</p>
               <div class="text-center md:text-left md:justify-start">
               <button class="mixed-button">
                 {{ $t('fast') }}
@@ -25,7 +25,7 @@
             </div>
           </div>
 
-          <div class="mx-auto flex justify-center space-x-4 z-10 bg-sento mt-0">
+          <div class="mx-auto flex justify-center space-x-4 z-10 bg-sento rounded-3xl mt-0">
             <template v-for="(item, index) in items" :key="index">
               <button v-if="getPositionClass(index) !== 'inactive'"
                 class="group relative rounded p-2 focus:outline-none focus-visible:ring focus-visible:ring-indigo-300"
