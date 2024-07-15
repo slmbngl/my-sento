@@ -77,7 +77,6 @@
         </div>
 
       </section>
-
     </main>
     <footer>
       <div class="flex flex-col lg:flex-row">
