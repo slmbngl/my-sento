@@ -51,7 +51,7 @@
           <div
             class="absolute top-1/2 start-1/2 transform -translate-y-1/2 -translate-x-1/2"
           >
-            <span class="text-center text-2xl font-bold text-gray-800 dark:text-white"
+            <span class="text-center text-2xl font-bold text-gray-800"
               >72%</span
             >
           </div>
@@ -101,7 +101,7 @@
           <div
             class="absolute top-1/2 start-1/2 transform -translate-y-1/2 -translate-x-1/2"
           >
-            <span class="text-center text-2xl font-bold text-gray-800 dark:text-white"
+            <span class="text-center text-2xl font-bold text-gray-800"
               >40%</span
             >
           </div>
@@ -151,7 +151,7 @@
           <div
             class="absolute top-1/2 start-1/2 transform -translate-y-1/2 -translate-x-1/2"
           >
-            <span class="text-center text-2xl font-bold text-gray-800 dark:text-white"
+            <span class="text-center text-2xl font-bold text-gray-800"
               >50%</span
             >
           </div>
