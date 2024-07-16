@@ -29,7 +29,7 @@
           </div>
 
         </div>
-        <div class="relative mt-28 ml-28 mb-5 ">
+        <div class="relative mt-28 ml-0 md:ml-28 mb-5 ">
           <div class="absolute w-2 h-1/2 rounded-full top-0 left-0  border border-red-600"></div>
           <p class="ml-4 text-5xl font-semibold ">Hizmetlerimiz</p>
         </div>

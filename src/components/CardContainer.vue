@@ -1,29 +1,27 @@
 <template>
-    <div class="relative flex flex-col items-center w-full h-full">
-        <div class="absolute top-0 right-0 flex mb-2 z-10">
-            <button @click="prevCard" class="p-2 mr-2 bg-gray-300 hover:bg-sento rounded-full">
-                <svg class="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M15 19l-7-7 7-7"></path>
-                </svg>
-            </button>
-            <button @click="nextCard" class="p-2 mr-8 bg-gray-300 hover:bg-sento rounded-full">
-                <svg class="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M9 5l7 7-7 7"></path>
-                </svg>
-            </button>
-        </div>
-        <div class="flex overflow-hidden w-full h-full mt-8">
-            <div v-for="(card, index) in cards" :key="index"
-                :class="['flex-none transition-transform duration-300', {'w-96 ml-96': index === 0, 'w-96 ml-0 mr-10': index === activeIndex,  'w-96': index !== activeIndex }]"
-                :style="{ transform: `translateX(-${activeIndex * 100}%)` }">
-                <CardComponent :title="card.title" :description="card.description" :isActive="index === activeIndex" />
-            </div>
-        </div>
+  <div class="relative flex flex-col items-end w-full h-full">
+    <div class="order-last md:order-firt flex mt-4 md:mt-0 md:absolute top-0 right-0 z-10">
+      <button @click="prevCard" class="p-2 mr-2 bg-gray-300 hover:bg-sento rounded-full">
+        <svg class="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <button @click="nextCard" class="p-2 mr-8 bg-gray-300 hover:bg-sento rounded-full">
+        <svg class="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
     </div>
+    <div class="flex order-firt md:order-last overflow-hidden w-full h-full mt-14">
+      <div v-for="(card, index) in cards" :key="index"
+        :class="['flex-none transition-transform duration-300', { 'mx-6 md:w-96 md:ml-96': index === 0, 'mx-14 md:w-96 md:ml-0 md:mr-10': index === activeIndex && index !== 0, 'mx-7 md:w-96 ': index !== activeIndex }]"
+        :style="{ transform: `translateX(-${activeIndex * 100}%)` }">
+        <CardComponent :title="card.title" :description="card.description" :isActive="index === activeIndex" />
+      </div>
+    </div>
+  </div>
 </template>
-  
+
 <script>
 import CardComponent from './CardComponent.vue';
 
@@ -43,7 +41,7 @@ export default {
       ],
       activeIndex: 1, // Start with the first card
       autoplayInterval: null, // Interval reference
-      autoplayDelay: 3000, // Autoplay delay in milliseconds (5 seconds)
+      autoplayDelay: 10000, // Autoplay delay in milliseconds (5 seconds)
     };
   },
   mounted() {
@@ -80,7 +78,6 @@ export default {
   },
 };
 </script>
-  <style scoped>
-  /* İsteğe bağlı stil düzenlemeleri */
-  </style>
-  
+<style scoped>
+/* İsteğe bağlı stil düzenlemeleri */
+</style>

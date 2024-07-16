@@ -2,7 +2,7 @@
   <div
     :class="[
       'flex flex-col p-10 rounded-3xl transition-all duration-300 ml-2',
-      isActive ? 'w-96 bg-sento text-white h-96 justify-between' : 'w-80 bg-gray-200 h-64 my-16 justify-center items-center'
+      isActive ? 'w-80 md:w-96 bg-sento text-white h-96 justify-between' : 'w-64 md:w-72 bg-gray-200 h-64 my-16 justify-center items-center'
     ]"
   >
     <h2 class="text-2xl font-semibold mb-2">{{ title }}</h2>
