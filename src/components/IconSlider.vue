@@ -1,41 +1,42 @@
 <template>
-    <swiper
-    :slidesPerView="5"
-      :spaceBetween="30"
-      :centeredSlides="true"
-      :autoplay="{ delay: 500, disableOnInteraction: false }"
-      :modules="modules"
-      @slideChange="onSlideChange"
-      class="mySwiper"
-    >
-      <swiper-slide>
-        <img src="./images/abdi.png" alt="">
-      </swiper-slide>
-      <swiper-slide>
-        <img src="./images/cyber.png" alt="">
-      </swiper-slide>
-      <swiper-slide>
-        <img src="./images/defacto.png" alt="">
-      </swiper-slide>
-      <swiper-slide>
-        <img src="./images/petrol.png" alt="">
-      </swiper-slide>
-      <swiper-slide>
-        <img src="./images/securitas.png" alt="">
-      </swiper-slide>
-      <swiper-slide>
-        <img src="./images/tab.png" alt="">
-      </swiper-slide>
-      <swiper-slide>
-        <img src="./images/unilever.png" alt="">
-      </swiper-slide>
-      <swiper-slide>
-        <img src="./images/eitya.webp" alt="">
-      </swiper-slide>
-      
+  <swiper :slidesPerView="slidesPerView" :spaceBetween="30" :centeredSlides="true"
+    :autoplay="{ delay: 500, disableOnInteraction: false }" :modules="modules" @slideChange="onSlideChange"
+    :breakpoints="{
+      0: {
+        slidesPerView: 1,
+      },
+      768: { // md boyutu (min-width: 768px)
+        slidesPerView: 5,
+      },
+    }" class="mySwiper">
+    <swiper-slide>
+      <img src="./images/abdi.png" alt="">
+    </swiper-slide>
+    <swiper-slide>
+      <img src="./images/cyber.png" alt="">
+    </swiper-slide>
+    <swiper-slide>
+      <img src="./images/defacto.png" alt="">
+    </swiper-slide>
+    <swiper-slide>
+      <img src="./images/petrol.png" alt="">
+    </swiper-slide>
+    <swiper-slide>
+      <img src="./images/securitas.png" alt="">
+    </swiper-slide>
+    <swiper-slide>
+      <img src="./images/tab.png" alt="">
+    </swiper-slide>
+    <swiper-slide>
+      <img src="./images/unilever.png" alt="">
+    </swiper-slide>
+    <swiper-slide>
+      <img src="./images/eitya.webp" alt="">
+    </swiper-slide>
 
-    </swiper>
-  </template>
+
+  </swiper>
+</template>
   
   <script>
   import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -56,7 +57,8 @@
     },
     data() {
     return {
-      activeSlide: 1
+      activeSlide: 1,
+      slidesPerView: 5,
     };
   },
     methods: {

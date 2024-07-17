@@ -2,9 +2,27 @@
     <swiper :modules="modules" :autoplay="{ delay: 2500, disableOnInteraction: false }" @slideChange="onSlideChange"
         class="mySwiper">
         <swiper-slide>
-            <div class="relative mr-10 ml-10 h-screen flex items-center justify-center">
+            <div class="relative mr-10 ml-10 md:h-screen flex items-center justify-center">
                 <div class="text-right text-white">
                     <h1 class="text-5xl font-semibold">Güven</h1>
+                    <p class="mt-4 text-lg">20 yılı aşkın uluslararası hizmet tecrübesi, gelişmiş altyapı, uzman kadro
+                        ve geniş hizmet ağı.</p>
+                </div>
+            </div>
+        </swiper-slide>
+        <swiper-slide>
+            <div class="relative mr-10 ml-10 md:h-screen flex items-center justify-center">
+                <div class="text-right text-white">
+                    <h1 class="text-5xl font-semibold">Performans</h1>
+                    <p class="mt-4 text-lg">20 yılı aşkın uluslararası hizmet tecrübesi, gelişmiş altyapı, uzman kadro
+                        ve geniş hizmet ağı.</p>
+                </div>
+            </div>
+        </swiper-slide>
+        <swiper-slide>
+            <div class="relative mr-10 ml-10 md:h-screen flex items-center justify-center">
+                <div class="text-right text-white">
+                    <h1 class="text-5xl font-semibold">Destek</h1>
                     <p class="mt-4 text-lg">20 yılı aşkın uluslararası hizmet tecrübesi, gelişmiş altyapı, uzman kadro
                         ve geniş hizmet ağı.</p>
                 </div>
