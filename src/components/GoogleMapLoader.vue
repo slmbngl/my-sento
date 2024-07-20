@@ -1,11 +1,16 @@
+<script setup>
+import { GoogleMap, Marker } from 'vue3-google-map'
+
+const center = { lat: 40.992915391880366, lng: 29.153225655310038 }
+</script>
+// 40.992915391880366, 29.153225655310038
 <template>
-    <div>
-      <div class="google-map" ref="googleMap"></div>
-      <template v-if="Boolean(this.google) && Boolean(this.map)">
-        <slot
-          :google="google"
-          :map="map"
-        />
-      </template>
-    </div>
-  </template>
+  <GoogleMap
+  api-key="AIzaSyA6qfGurGcrUbc7RLIJyfRmjaK6qAe8axA"
+  style="width: 100%; height: 500px"
+  :center="center"
+  :zoom="15"
+  >
+    <Marker :options="{ position: center }" />
+  </GoogleMap>
+</template>

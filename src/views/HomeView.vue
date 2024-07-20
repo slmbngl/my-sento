@@ -1,3 +1,45 @@
+<script setup>
+import LanguageSelector from '../components/LanguageSelector.vue';
+import NavBar from '../components/NavBar.vue';
+import Progress from '../components/ProgressSliderPage.vue';
+import Slider from '../components/Slide.vue';
+import CardContainer from '../components/CardContainer.vue';
+import IconSlider from '../components/IconSlider.vue'
+import Comments from '../components/Comments.vue';
+import ScrollToTopButton from '../components/ScrollToTopButton.vue';
+import Mottos from '../components/Mottos.vue';
+import Footer from '../components/Footer.vue';
+import Google from '../components/GoogleMapLoader.vue'
+
+import { ref } from 'vue';
+
+const isBlurred = ref(false);
+
+function handleToggleBlur(value) {
+  isBlurred.value = value;
+}
+const corporateItems = [
+  { text: 'Hakkımızda', href: '#' },
+  { text: 'Misyon & Vizyon & Değerler', href: '#' },
+];
+
+const servicesItems = [
+  { text: 'Çalışan Destek Programı', href: '#' },
+  { text: 'İşyeri Psikoloğu', href: '#' },
+  { text: 'Travma Sonrası Destek Programı', href: '#' },
+  { text: 'Psikoloji Söyleşileri', href: '#' },
+  { text: 'Sağlıklı Beslenme Söyleşileri', href: '#' },
+  { text: 'Ruh Sağlığı Politikaları', href: '#' },
+  { text: 'Çeşitlilik ve Kapsayıcılık Politikaları', href: '#' },
+];
+
+const menuItems = [
+  { text: 'Blog', href: '#' },
+  { text: 'Referanslarımız', href: '#' },
+  { text: 'Kariyer', href: '#' },
+  { text: 'S.S.S', href: '#' },
+];
+</script>
 <template>
   <div :class="{ 'blurred': isBlurred }" class="min-h-screen relative">
     <header class="sticky top-0 w-full z-30">
@@ -137,8 +179,10 @@
 
         <div class="order-first md:absolute md:w-4/12 ml-8 md:ml-0 mr-8 right-0 bottom-10 right-0 mt-24 md:mt-0">
           <div class="column-4 bg-black rounded-3xl h-auto">
-            <div class="bg-white h-96 z-10 w-4/5 mx-8 md:ml-16 "></div>
-            <div class="mx-8 md:mx-16">
+            <div class="h-96 z-10 mx-4 py-4">
+              <Google />
+            </div>
+            <div class="mx-8 md:mx-16 mt-4">
               <a class="text-gray-200 text-base">Adresimiz</a> <br>
               <a class="text-gray-200 text-3xl font-bold">Mevlana Mah. Mimoza Sk. İsmet İki Telli NO:3 İç Kapı: 33
                 Ümraniye/İSTANBUL</a>
@@ -191,44 +235,3 @@
     <ScrollToTopButton class="z-20" />
   </div>
 </template>
-
-<script setup>
-import LanguageSelector from '../components/LanguageSelector.vue';
-import NavBar from '../components/NavBar.vue';
-import Progress from '../components/ProgressSliderPage.vue';
-import Slider from '../components/Slide.vue';
-import CardContainer from '../components/CardContainer.vue';
-import IconSlider from '../components/IconSlider.vue'
-import Comments from '../components/Comments.vue';
-import ScrollToTopButton from '../components/ScrollToTopButton.vue';
-import Mottos from '../components/Mottos.vue';
-import Footer from '../components/Footer.vue';
-import { ref } from 'vue';
-
-const isBlurred = ref(false);
-
-function handleToggleBlur(value) {
-  isBlurred.value = value;
-}
-const corporateItems = [
-  { text: 'Hakkımızda', href: '#' },
-  { text: 'Misyon & Vizyon & Değerler', href: '#' },
-];
-
-const servicesItems = [
-  { text: 'Çalışan Destek Programı', href: '#' },
-  { text: 'İşyeri Psikoloğu', href: '#' },
-  { text: 'Travma Sonrası Destek Programı', href: '#' },
-  { text: 'Psikoloji Söyleşileri', href: '#' },
-  { text: 'Sağlıklı Beslenme Söyleşileri', href: '#' },
-  { text: 'Ruh Sağlığı Politikaları', href: '#' },
-  { text: 'Çeşitlilik ve Kapsayıcılık Politikaları', href: '#' },
-];
-
-const menuItems = [
-  { text: 'Blog', href: '#' },
-  { text: 'Referanslarımız', href: '#' },
-  { text: 'Kariyer', href: '#' },
-  { text: 'S.S.S', href: '#' },
-];
-</script>

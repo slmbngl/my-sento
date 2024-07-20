@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import NavBarDemo from '../components/NavBarsSideBar.vue'
+import Google from '../components/GoogleMapLoader.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,7 +15,12 @@ const router = createRouter({
       path:'/navbardemo/',
       name: 'navbar',
       component: NavBarDemo
-    }
+    },
+    {
+      path:'/google/',
+      name: 'google',
+      component: Google
+    },
   ]
 })
 
