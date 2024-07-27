@@ -5,9 +5,7 @@
         <img src="" class="img mr-4 h-6 sm:h-9" alt="Logo" />
       </a>
       <div class="flex items-center lg:order-2">
-
-
-        <button @click="toggleMenu" data-collapse-toggle="mobile-menu-2" type="button"
+        <button @click="toggleSidebar" data-collapse-toggle="mobile-menu-2" type="button"
           class="inline-flex justify-end justify-self-end items-right p-2 ml-1 text-gray-500 rounded-lg xl:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
           aria-controls="mobile-menu-2" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
@@ -22,13 +20,11 @@
               clip-rule="evenodd"></path>
           </svg>
         </button>
-
       </div>
       <div @mouseover="toggleBlur(true)" @mouseleave="toggleBlur(false)"
         class="relative z-10 w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
-
-        <ul v-if="menuOpen"
-          class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 lg:hover:bg-white rounded-full py-2 px-2 ml-20">
+        <ul
+          class="hidden lg:flex lg:flex-row lg:space-x-8 lg:mt-0 lg:hover:bg-white mt-4 font-medium  rounded-full py-2 px-2 ml-20">
           <PopoverGroup class="lg:gap-x-12">
             <Popover class="relative">
               <PopoverButton
@@ -37,7 +33,6 @@
                 {{ $t('navBtnName') }}
                 <ChevronDownIcon class="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
               </PopoverButton>
-
               <transition enter-active-class="transition ease-out duration-200"
                 enter-from-class="opacity-0 translate-y-1" enter-to-class="opacity-100 translate-y-0"
                 leave-active-class="transition ease-in duration-150" leave-from-class="opacity-100 translate-y-0"
@@ -47,18 +42,15 @@
                   <div class="p-4">
                     <div v-for="item in products" :key="item.name"
                       class="group relative flex items-center gap-x-6 rounded-lg p-4 pb-8 leading-6">
-
                       <div class="customHover flex-auto pr-5">
                         <a :href="item.href" class="block font-semibold text-white">
                           {{ item.name }}
                           <span class="absolute inset-0" />
                         </a>
                         <hr>
-
                       </div>
                     </div>
                   </div>
-
                 </div>
               </transition>
             </Popover>
@@ -70,7 +62,6 @@
                 {{ $t('navBtnName2') }}
                 <ChevronDownIcon class="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
               </PopoverButton>
-
               <transition enter-active-class="transition ease-out duration-200"
                 enter-from-class="opacity-0 translate-y-1" enter-to-class="opacity-100 translate-y-0"
                 leave-active-class="transition ease-in duration-150" leave-from-class="opacity-100 translate-y-0"
@@ -80,7 +71,6 @@
                   @mouseover="groupPanelOpen2 = true" @mouseleave="groupPanelOpen2 = false">
                   <div class="p-4 ">
                     <div class="group relative flex items-center gap-x-6 rounded-lg p-4 pb-8 leading-6">
-
                       <div class="customHover flex-auto pr-5">
                         <a href="#" class="block font-semibold text-white" @mouseover="opup = true"
                           @mouseleave="opup = false">
@@ -88,11 +78,9 @@
                           <span class="absolute inset-0" />
                         </a>
                         <hr>
-
                       </div>
                     </div>
                     <div class="group relative flex items-center gap-x-6 rounded-lg p-4 leading-6">
-
                       <div class="customHover flex-auto pr-5">
                         <a href="#" class="block font-semibold text-white" @mouseover="opup2 = true"
                           @mouseleave="opup2 = false">
@@ -100,13 +88,10 @@
                           <span class="absolute inset-0" />
                         </a>
                         <hr>
-
                       </div>
                     </div>
                   </div>
-
                 </div>
-
               </transition>
               <transition enter-active-class="transition ease-out duration-200"
                 enter-from-class="opacity-0 translate-x-1" enter-to-class="opacity-100 translate-x-0"
@@ -123,9 +108,7 @@
                           <span class="absolute inset-0" />
 
                         </a>
-
                         <hr>
-
                       </div>
                     </div>
                     <div class="group relative flex items-center gap-x-6 rounded-lg p-4 leading-6">
@@ -134,7 +117,6 @@
                           {{ $t('navbtn6') }}
                           <span class="absolute inset-0" />
                         </a>
-
                         <hr>
                       </div>
                     </div>
@@ -154,11 +136,8 @@
                         <a href="#" class="block font-semibold text-white">
                           {{ $t('navbtn7') }}
                           <span class="absolute inset-0" />
-
                         </a>
-
                         <hr>
-
                       </div>
                     </div>
                     <div class="group relative flex items-center gap-x-6 rounded-lg p-4 leading-6">
@@ -167,18 +146,14 @@
                           {{ $t('navbtn8') }}
                           <span class="absolute inset-0" />
                         </a>
-
                         <hr>
                       </div>
                     </div>
                   </div>
                 </div>
               </transition>
-
             </Popover>
           </PopoverGroup>
-
-
           <li>
             <a href="#"
               class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-sento lg:p-0 "
@@ -199,13 +174,10 @@
               class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-sento lg:p-0 ">{{
                 $t('navBtnName6') }}</a>
           </li>
-
-
         </ul>
-
       </div>
-      <div
-        class="flex sm:w-full md:w-full lg:hidden xl:flex xl:w-auto xl:justify-left flex-wrap justify-center lg:order-1">
+      <div v-if="menuOpen"
+        class="hidden xl:flex xl:w-auto xl:justify-left flex-wrap justify-center lg:order-1">
         <div class="w-full xl:w-auto xl:mt-2 xl:w-3/7 p-2 text-center">
           <a href="#" class="text-black uppercase bg-sento-gray focus:ring-4 rounded-full p-2 mr-2 "
             style="background-color: #EFF1F2;">
@@ -222,40 +194,24 @@
           </button>
         </div>
       </div>
-
       <div v-if="isBlurred" class="absolute inset-0 z-0 backdrop-brightness-50"></div>
     </div>
+    <NavBarsSide v-model="isSidebarOpen"/>
   </nav>
 </template>
 <script setup>
 import { ref, defineEmits } from 'vue';
 import { useI18n } from 'vue-i18n';
+import NavBarsSide from './NavBarsSideBar.vue';
 
 import {
-  Dialog,
-  DialogPanel,
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
   Popover,
   PopoverButton,
   PopoverGroup,
-  PopoverPanel,
 } from '@headlessui/vue';
 
-import {
-  ArrowPathIcon,
-  Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
-  XMarkIcon,
-} from '@heroicons/vue/24/outline';
-
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/vue/20/solid';
+import { ChevronDownIcon } from '@heroicons/vue/20/solid';
 const { t } = useI18n();
-
 const products = [
   { name: t('navbtn'), href: '#' },
   { name: t('navbtn2'), href: '#' },
@@ -271,15 +227,20 @@ const products3 = [
 
 const mobileMenuOpen = ref(false);
 const menuOpen = ref(true);
-
+const isOpen = ref(true);
 const groupPanelOpen = ref(false);
 const groupPanelOpen2 = ref(false);
 const opup = ref(false);
 const opup2 = ref(false);
 
+const isSidebarOpen = ref(false);
+
+const toggleSidebar = () => {
+  isSidebarOpen.value = !isSidebarOpen.value;
+};
 
 function toggleMenu() {
-  menuOpen.value = !menuOpen.value;
+  isOpen.value = !isOpen.value;
 }
 
 const emits = defineEmits(['toggleBlur']);

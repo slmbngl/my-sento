@@ -9,8 +9,7 @@ import Comments from '../components/Comments.vue';
 import ScrollToTopButton from '../components/ScrollToTopButton.vue';
 import Mottos from '../components/Mottos.vue';
 import Footer from '../components/Footer.vue';
-import Google from '../components/GoogleMapLoader.vue'
-
+import Google from '../components/GoogleMapLoader.vue';
 import { ref } from 'vue';
 
 const isBlurred = ref(false);

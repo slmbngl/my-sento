@@ -126,8 +126,3 @@ watch(currentLanguage, (newLang) => {
   console.log(`Language changed to: ${newLang}`);
 });
 </script>
-
-
-<style scoped>
-/* İhtiyacınıza göre CSS stilleri */
-</style>
