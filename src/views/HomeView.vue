@@ -134,7 +134,7 @@ const menuItems = [
         <div class="order-last md:w-7/12 h-auto rounded-3xl m-10 pt-5" style="background-color: #EFF1F2;">
           <div class="flex flex-col md:flex-row md:justify-between items-center">
             <img class="h-8 mt-4 md:ml-20" src="../components/images/reallog.png" alt="">
-            <Selector class="h-8 mt-4 md:mr-20" />
+            <Selector class="mt-4 md:mr-20" />
           </div>
           <div class="flex flex-col md:flex-row md:gap-8 mt-10 mx-8 md:mx-16">
             <div>

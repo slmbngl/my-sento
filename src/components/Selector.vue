@@ -49,7 +49,7 @@ watch(currentLanguage, (newLang) => {
         </div>
 
         <div v-if="isDropdownOpen"
-            class="origin-bottom-right absolute bottom-full -bottom-8 w-36 rounded-2xl shadow-lg backdrop-blur-sm bg-black/30 z-30"
+            class="origin-bottom-right absolute bottom-full -bottom-10 w-36 rounded-2xl shadow-lg backdrop-blur-sm bg-black/30 z-30"
             style="transform: translateY(-100%);" ref="dropdown">
             <div class="py-2 px-2 rounded-full" role="none">
                 <div @click="selectLanguage('en')"
