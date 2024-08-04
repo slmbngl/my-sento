@@ -13,8 +13,8 @@
       </button>
     </div>
     <div class="flex order-firt md:order-last overflow-hidden w-full h-full mt-14">
-      <div v-for="(card, index) in cards" :key="index"
-        :class="['flex-none transition-transform duration-300', { 'mx-6 md:mx-0 md:w-96 md:ml-96': index === 0, 'mx-14 md:mx-0 md:w-96 md:ml-0 md:mr-10': index === activeIndex && index !== 0, 'mx-7 md:mx-0 md:w-96 ': index !== activeIndex }]"
+      <div v-for="(card, index) in loopedCards" :key="index"
+        :class="['flex-none transition-transform duration-300', { ' mx-0 w-96 md:ml-96': index === 0, ' mx-0 w-96 ml-7 md:ml-0 mr-0 md:mr-24': index === activeIndex && index !== 0, ' mx-0 w-96 ': index !== activeIndex }]"
         :style="{ transform: `translateX(-${activeIndex * 100}%)` }">
         <CardComponent :title="card.title" :description="card.description" :isActive="index === activeIndex" />
       </div>
@@ -40,9 +40,13 @@ export default {
         { title: 'Yeni Politikalar', description: 'Travmatik olaylar genellikle önceden haber verilmez...' },
       ],
       activeIndex: 1, // Start with the first card
-      autoplayInterval: null, // Interval reference
-      autoplayDelay: 10000, // Autoplay delay in milliseconds (5 seconds)
+      autoplayDelay: 6000, // Autoplay delay in milliseconds (5 seconds)
     };
+  },
+  computed: {
+    loopedCards() {
+      return [...this.cards, ...this.cards, ...this.cards, ...this.cards, ...this.cards];
+    },
   },
   mounted() {
     // Start autoplay when component is mounted
@@ -58,22 +62,26 @@ export default {
       clearInterval(this.autoplayInterval);
     },
     prevCard() {
+      this.stopAutoplay();
       if (this.activeIndex > 0) {
         this.activeIndex--;
       } else {
         this.activeIndex = this.cards.length - 1;
       }
+      this.startAutoplay();
     },
     nextCard() {
-      if (this.activeIndex < this.cards.length - 1) {
+      this.stopAutoplay();
+      if (this.activeIndex < this.loopedCards.length - 1) {
         this.activeIndex++;
       } else {
-        this.activeIndex = 0;
+        this.activeIndex = this.cards.length; // Orta kart kümesine döner
       }
+      this.startAutoplay();
     },
   },
   beforeDestroy() {
-    // Clear interval when component is destroyed to prevent memory leaks
+    // Bileşen yok edildiğinde interval'i temizle
     clearInterval(this.autoplayInterval);
   },
 };

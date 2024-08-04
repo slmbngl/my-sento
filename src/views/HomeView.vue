@@ -10,6 +10,7 @@ import ScrollToTopButton from '../components/ScrollToTopButton.vue';
 import Mottos from '../components/Mottos.vue';
 import Footer from '../components/Footer.vue';
 import Google from '../components/GoogleMapLoader.vue';
+import Selector from '../components/Selector.vue';
 import { ref } from 'vue';
 
 const isBlurred = ref(false);
@@ -41,12 +42,12 @@ const menuItems = [
 </script>
 <template>
   <div :class="{ 'blurred': isBlurred }" class="min-h-screen relative">
-    <header class="sticky top-0 w-full z-30">
+    <header class="fixed backdrop-blur-md mb-0 bg-opacity-75 top-0 w-full z-30 shadow-lg">
       <NavBar @toggleBlur="handleToggleBlur" />
     </header>
     <main>
-      <section class="relative bg-white z-10">
-        <Progress />
+      <section class="relative bg-white z-10 mt-2">
+        <Progress class="" />
         <div class="flex flex-col md:flex-row mt-0 xl:mt-20 px-8 md:px-0 md:pl-8 lg:pl-20 pb-0 md:pb-5">
           <div class="w-3/4 lg:text-left mr-0 md:mr-9 lg:mr-20">
             <p class="text-6xl sm:text-9xl font-extrabold text-left text-black font-qubi">Faydaları.</p>
@@ -61,7 +62,7 @@ const menuItems = [
             <!-- Yuvarlak kırmızı toplar -->
             <div class="flex flex-col items-center justify-center space-y-6 mt-10 xl:mt-0 ml-0 md:ml-12">
               <div class="h-10 w-10 bg-red-500 rounded-full"></div>
-              <div class="h-14 w-14 bg-red-500 rounded-full"></div>
+              <div class="h-14 w-14 rounded-full" style="background-color: #F9C6C6;"></div>
             </div>
             <!-- Slider Bileşeni -->
             <div class="w-40 md:w-full mt-10 md:mt-5 flex">
@@ -70,13 +71,13 @@ const menuItems = [
           </div>
 
         </div>
-        <div class="relative mt-28 ml-0 md:ml-28 mb-5 ">
+        <div class="relative mt-28 ml-6 md:ml-28 mb-5 ">
           <div class="absolute w-2 h-1/2 rounded-full top-0 left-0  border border-red-600"></div>
           <p class="ml-4 text-5xl font-semibold ">Hizmetlerimiz</p>
         </div>
         <CardContainer />
         <div class="col border-b-2 my-4">
-          <div class="relative mt-28 ml-0 md:ml-28 mb-5 ">
+          <div class="relative mt-28 ml-5 md:ml-28 mb-5 ">
             <div class="absolute w-2 h-1/2 rounded-full top-0 left-0 border border-red-600"></div>
             <p class="ml-4 text-5xl font-semibold ">Onlar Bizi Seçti</p>
           </div>
@@ -93,15 +94,15 @@ const menuItems = [
           <Comments />
         </div>
         <div class="flex flex-col md:flex-row">
-          <div class="relative w-full md:w-3/5 ml-10 md:ml-28 mb-5 ">
-            <div class="absolute w-2 h-10 md:h-1/6 rounded-full top-0 left-0 border border-red-600"></div>
-            <p class="ml-4 text-4xl md:text-5xl font-semibold mt-4">Birkaç cümlede bizden bahsetmek gerekirse;</p>
-            <p class="mt-8 text-xl font-normal text-left text-black font-qubi">İş arkadaşlarımızın performans artışında
+          <div class="relative w-full md:w-3/5 p-2 md:p-0 ml-0 md:ml-28 mb-5 ">
+            <div class="absolute ml-6 md:ml-0 w-2 h-10 md:h-1/6 rounded-full top-0 left-0 border border-red-600"></div>
+            <p class="ml-4 mt-4 p-6 pb-0 md:p-0 text-4xl md:text-5xl font-semibold">Birkaç cümlede bizden bahsetmek gerekirse;</p>
+            <p class="mt-0 md:mt-8 p-7 md:p-0 text-lg md:text-xl font-normal text-left text-black font-qubi">İş arkadaşlarımızın performans artışında
               bu
               kadar fark yaratacağını bilmiyordum. Sento ekibi ile çalışmamızın bizlere çok fazla avantajı oldu.
               Kendilerine sonsuz bir teşekkürü içtenlikle borç bilirim.</p>
-            <button class="mixed-button mt-10 ml-12 md:ml-2" style="width: 200px;text-align: center;">BİZİ TANI <svg
-                xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512">
+            <button class="mixed-button mt-0 md:mt-10 ml-20 md:ml-2" style="width: 190px;"><span class="btn-text"> BİZİ TANI
+              </span> <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 448 512">
                 <path
                   d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
               </svg></button>
@@ -114,7 +115,7 @@ const menuItems = [
             <div
               class="flex flex-col md:flex-row h-4/5 mx-32 rounded-3xl w-full flex justify-center items-center backdrop-opacity-10 backdrop-invert bg-black/70">
               <div class="flex w-full mb-16 md:mb-0 md:w-1/2 justify-center items-center">
-                <img class="bg-sento" style="width: 192px; height: 182px;" src="" alt="img">
+                <img style="width: 192px; height: 182px;" src="../components/images/Slogo.png" alt="img">
               </div>
               <div class="hidden md:absolute my-16 inset-y-0 w-2 rounded-full border border-gray-400"></div>
               <Mottos class="flex w-full mt-10 md:mt-0 md:w-1/2" />
@@ -129,15 +130,11 @@ const menuItems = [
     </main>
     <footer>
       <Footer class="mt-8 md:mt-8 ml-8 md:ml-52 w-4/5" />
-      <div class="flex flex-col md:flex-row ">
-        <div class="order-last md:w-7/12 bg-sento-gray h-auto rounded-3xl m-10">
+      <div class=" relative flex flex-col md:flex-row ">
+        <div class="order-last md:w-7/12 h-auto rounded-3xl m-10 pt-5" style="background-color: #EFF1F2;">
           <div class="flex flex-col md:flex-row md:justify-between items-center">
-            <img class="h-8 mt-4 md:ml-20" src="" alt="">
-            <button class="mixed-button mt-6 md:mr-16 md:ml-auto" style="width: 200px;text-align: center;">TOPLANTI
-              PLANLA<svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512">
-                <path fill="#c3c6d1"
-                  d="M96 32V64H48C21.5 64 0 85.5 0 112v48H448V112c0-26.5-21.5-48-48-48H352V32c0-17.7-14.3-32-32-32s-32 14.3-32 32V64H160V32c0-17.7-14.3-32-32-32S96 14.3 96 32zM448 192H0V464c0 26.5 21.5 48 48 48H400c26.5 0 48-21.5 48-48V192z" />
-              </svg></button>
+            <img class="h-8 mt-4 md:ml-20" src="../components/images/reallog.png" alt="">
+            <Selector class="h-8 mt-4 md:mr-20" />
           </div>
           <div class="flex flex-col md:flex-row md:gap-8 mt-10 mx-8 md:mx-16">
             <div>
@@ -149,7 +146,7 @@ const menuItems = [
               </ul>
             </div>
 
-            <div class="md:w-2 md:h-1/8 rounded-full right-0 border border-gray-400"></div>
+            <div class="md:w-1.5 md:h-1/8 rounded-full right-0 border border-gray-400 opacity-50"></div>
 
             <div>
               <ul>
@@ -160,7 +157,7 @@ const menuItems = [
               </ul>
             </div>
 
-            <div class="md:w-2 md:h-1/8 rounded-full right-0 border border-gray-400"></div>
+            <div class="md:w-1.5 md:h-1/8 rounded-full right-0 border border-gray-400 opacity-50"></div>
 
             <div>
               <ul>

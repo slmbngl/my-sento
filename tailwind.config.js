@@ -33,8 +33,18 @@ export default {
         qubi: ['Libre Franklin', 'sans-serif']
       },
       height:{
+        cst: '512px',
         custom: '540px',
         customtwo: '796px',
+      },
+      width:{
+        cst:'450px'
+      },
+      margin:{
+        cst:'450px'
+      },
+      transitionDuration:{
+        transdur: '5000ms'
       }
     },
   },

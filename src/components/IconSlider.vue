@@ -1,6 +1,6 @@
 <template>
-  <swiper :slidesPerView="slidesPerView" :spaceBetween="30" :centeredSlides="true"
-    :autoplay="{ delay: 500, disableOnInteraction: false }" :modules="modules" @slideChange="onSlideChange"
+  <swiper :slidesPerView="slidesPerView" :spaceBetween="30" :centeredSlides="true" :loop="true"
+    :autoplay="{ delay: 1500, disableOnInteraction: false }" :modules="modules" @slideChange="onSlideChange"
     :breakpoints="{
       0: {
         slidesPerView: 1,

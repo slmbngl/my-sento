@@ -1,5 +1,5 @@
 <template>
-    <swiper :modules="modules" :autoplay="{ delay: 2500, disableOnInteraction: false }" @slideChange="onSlideChange"
+    <swiper :modules="modules" :autoplay="{ delay: 2500, disableOnInteraction: false, pauseOnMouseEnter: true }" @slideChange="onSlideChange"
         class="mySwiper">
         <swiper-slide>
             <div class="relative mr-10 ml-10 md:h-screen flex items-center justify-center">

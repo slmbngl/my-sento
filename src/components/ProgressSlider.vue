@@ -1,23 +1,22 @@
 <template>
-  <div class="relative overflow-hidden h-auto mb-10 md:mb-0 xl:h-screen" >
+  <div class="relative overflow-hidden h-auto mb-10 md:mb-0 xl:h-auto">
     <template v-for="(item, index) in items" :key="index">
-      <TransitionRoot :show="active === index" enter="transition ease-out duration-10000 transform"
-        enterFrom="translate-x-full" enterTo="translate-x-0" leave="transition ease-in duration-10000 transform absolute"
+      <TransitionRoot :show="active === index" enter="transition ease-out duration-500 transform"
+        enterFrom="translate-x-full" enterTo="translate-x-0" leave="transition ease-in duration-500 transform absolute"
         leaveFrom="translate-x-0" leaveTo="-translate-x-full" @before-enter="heightFix()" class="inset-0">
-        <div class="relative bg-sento rounded-3xl mx-4 px-0 sm:mx-8 sm:px-14">
+        <div class="relative bg-sento rounded-3xl mx-4 px-0 sm:mx-8 sm:px-14 mt-20">
           <div class="flex justify-center md:justify-start text-left text-white z-0">
-            <div class="w-3/5 xl:mt-40 xl:mb-20">
+            <div class="w-3/5 xl:mt-20 xl:mb-20">
               <p class="text-3xl md:text-6xl xl:text-7xl font-normal sm:font-semibold py-3">{{ item.letter }}</p>
               <p class="text-lg md:text-xl font-light sm:font-normal py-3">{{ item.letter2 }}</p>
-              <div class="text-center md:text-left md:justify-start">
-              <button class="mixed-button">
-                {{ $t('fast') }}
-                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512">
-                  <path fill="#56585e"
-                    d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
-                </svg>
-              </button>
-            </div>
+              <div class="ml-2 md:ml-0 w-48 md:w-52">
+                <button class="mixed-button">
+                  <span class="btn-text">{{ $t('fast') }}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+                    <path d="M592-417H126v-126h466L390-745l90-89 354 354-354 354-90-89 202-202Z" />
+                  </svg>
+                </button>
+              </div>
             </div>
             <div class="hidden md:block w-2/5 bottom-0 right-0 mr-0 pr-0 pl-0 ml-0 mt-20 absolute z-0">
               <img class="rounded-xl ml-auto mr-0 pointer-events-none" :src="item.img" width="430" height="470"
@@ -28,7 +27,7 @@
           <div class="mx-auto flex justify-center space-x-4 z-10 bg-sento rounded-3xl mt-0">
             <template v-for="(item, index) in items" :key="index">
               <button v-if="getPositionClass(index) !== 'inactive'"
-                class="group relative rounded p-2 focus:outline-none focus-visible:ring focus-visible:ring-indigo-300"
+                class="group relative rounded mb-4 focus:outline-none focus-visible:ring focus-visible:ring-indigo-300"
                 @click="active = index">
                 <span class="flex flex-col items-center text-center transition-opacity"
                   :class="getPositionClass(index)">
@@ -41,7 +40,7 @@
                    a 15.9155 15.9155 0 0 1 0 31.831
                    a 15.9155 15.9155 0 0 1 0 -31.831" />
                     </svg>
-                    <span class="absolute text-sm text-center font-medium text-slate-900">{{ index + 1 }}</span>
+                    <span class="absolute text-sm text-center font-medium text-white">{{ index + 1 }}</span>
                   </div>
                 </span>
               </button>
@@ -83,20 +82,36 @@ const startAnimation = () => {
   frame.value = requestAnimationFrame(animate)
 }
 
-const animate = (now: number) => {
-  let timeDifference = now - firstFrameTime.value
-  let timeFraction = Math.max(0, timeDifference) / duration
-  if (timeFraction <= 1) {
-    progress.value = timeFraction * 100
-    frame.value = requestAnimationFrame(animate)
-  } else {
-    timeFraction = 1
-    progress.value = 0
-    active.value = (active.value + 1) % items.length
-    startAnimation()
-  }
-}
+const quickDuration: number = 1000; // Hızlı yeniden dolma süresi
 
+const animate = (now: number) => {
+  let timeDifference = now - firstFrameTime.value;
+  let timeFraction = Math.max(0, timeDifference) / duration;
+  if (timeFraction <= 1) {
+    progress.value = timeFraction * 100;
+    frame.value = requestAnimationFrame(animate);
+  } else {
+    progress.value = 100;
+    cancelAnimationFrame(frame.value); // İlk animasyonu durdur
+    setTimeout(() => {
+      // Hızlı dolma animasyonunu başlat
+      let startQuickAnimationTime = performance.now();
+      const quickAnimate = (nowQuick: number) => {
+        let quickTimeDifference = nowQuick - startQuickAnimationTime;
+        let quickTimeFraction = Math.max(0, quickTimeDifference) / quickDuration;
+        if (quickTimeFraction <= 1) {
+          progress.value = quickTimeFraction * 100;
+          frame.value = requestAnimationFrame(quickAnimate);
+        } else {
+          progress.value = 0; // İlerleme çubuğunu sıfırla
+          active.value = (active.value + 1) % items.length; // Bir sonraki slayta geç
+          startAnimation(); // Yeni slayt için animasyonu başlat
+        }
+      };
+      requestAnimationFrame(quickAnimate); // Hızlı dolma animasyonunu başlat
+    }, 100); // Kısa bir gecikme ekleyin
+  }
+};
 const heightFix = async () => {
   await nextTick()
   if (itemsRef.value && itemsRef.value.parentElement) itemsRef.value.parentElement.style.height = `${itemsRef.value.clientHeight}px`
@@ -139,7 +154,7 @@ const getPositionClass = (index: number) => {
 .progress-circle {
   width: 40px;
   height: 40px;
-  transform: rotate(-90deg);
+  transform: rotate(0deg);
 }
 
 .circle-bg {
@@ -154,7 +169,6 @@ const getPositionClass = (index: number) => {
   /* İlerleme çubuğu rengi */
   stroke-width: 2.8;
   stroke-linecap: round;
-  transition: stroke-dasharray 0.3s;
 }
 
 button .absolute {
@@ -204,11 +218,16 @@ button .absolute {
   z-index: 0;
   cursor: pointer;
   transition: width 0.3s ease-in-out;
-  @apply text-sento w-48 lg:w-1/4 font-medium rounded-full text-xs px-5 my-3 text-left me-2 mb-2 uppercase border-2 border-dashed;
+  @apply text-sento font-medium rounded-full text-xs px-5 my-3 me-2 mb-2 uppercase border-2 border-dashed;
 }
-
 .mixed-button:hover {
-  text-align: center;
+  text-align: left;
+}
+.mixed-button:hover .btn-text {
+  position: relative;
+  display: inline-block;
+  transform: translateX(12px);
+  transition: all 0.3s ease-in-out;
 }
 
 .mixed-button:before {
@@ -232,7 +251,7 @@ button .absolute {
   position: absolute;
   right: 5px;
   top: 8px;
-  fill: #383736;
+  fill: white;
   opacity: 1;
   transition: transform 0.3s ease-in-out;
 }
@@ -240,10 +259,7 @@ button .absolute {
 .mixed-button:hover svg {
   top: -18px;
   transform: translateX(-10px) translateY(100%);
-
+  fill: #e61111;
 }
 
-.mixed-button:hover svg:hover {
-  transform: translateY(0) translateX(0);
-}
 </style>
