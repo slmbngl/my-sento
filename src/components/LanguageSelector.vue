@@ -55,9 +55,9 @@
             <span class="text-xs whitespace-nowrap">{{ $t('sellang') }}</span>
           </div>
           <!-- Dropdown açma düğmesi -->
-           <div class="flex justify-end">
-          <Selector/>
-        </div>
+          <div class="flex justify-end">
+            <Selector />
+          </div>
         </div>
       </div>
     </div>
