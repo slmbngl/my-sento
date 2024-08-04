@@ -1,5 +1,5 @@
 <template>
-  <nav class="relative bg-white backdrop-blur-md bg-opacity-80 px-0 mb-0 pb-0 lg:px-0 pt-5 md:pt-2.5">
+  <nav class="relative bg-white backdrop-blur-md bg-opacity-80 px-0 mb-0 pb-2.5 md:pb-0 lg:px-0 pt-5 md:pt-2.5">
     <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
       <a href="#" class="taker flex items-center ml-10 md:ml-0 mr-10 ">
         <img src="./images/reallog.png" class="img h-6 sm:h-8" alt="Logo" />

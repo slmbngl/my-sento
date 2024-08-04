@@ -90,10 +90,10 @@ const menuItems = [
           <div class="border-b-2"></div>
         </div>
 
-        <div class="bg-sento-sgray mb-10 md:mb-28">
+        <div class="bg-sento-sgray mb-10 md:mb-20">
           <Comments />
         </div>
-        <div class="flex flex-col md:flex-row">
+        <div class="flex flex-col md:flex-row md:mb-10">
           <div class="relative w-full md:w-3/5 p-2 md:p-0 ml-0 md:ml-28 mb-5 ">
             <div class="absolute ml-6 md:ml-0 w-2 h-10 md:h-1/6 rounded-full top-0 left-0 border border-red-600"></div>
             <p class="ml-4 mt-4 p-6 pb-0 md:p-0 text-4xl md:text-5xl font-semibold">Birkaç cümlede bizden bahsetmek gerekirse;</p>
