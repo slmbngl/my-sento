@@ -47,7 +47,7 @@ const menuItems = [
     </header>
     <main>
       <section class="relative bg-white z-10 mt-2">
-        <Progress class="" />
+        <Progress class="pt-20" />
         <div class="flex flex-col md:flex-row mt-0 xl:mt-20 px-8 md:px-0 md:pl-8 lg:pl-20 pb-0 md:pb-5">
           <div class="w-3/4 lg:text-left mr-0 md:mr-9 lg:mr-20">
             <p class="text-6xl sm:text-9xl font-extrabold text-left text-black font-qubi">Faydaları.</p>

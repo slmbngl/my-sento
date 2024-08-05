@@ -1,9 +1,11 @@
 <template>
-  <nav class="relative bg-white backdrop-blur-md bg-opacity-80 px-0 mb-0 pb-2.5 md:pb-0 lg:px-0 pt-5 md:pt-2.5">
-    <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-      <a href="#" class="taker flex items-center ml-10 md:ml-0 mr-10 ">
-        <img src="./images/reallog.png" class="img h-6 sm:h-8" alt="Logo" />
-      </a>
+  <nav class="relative bg-white backdrop-blur-md bg-opacity-80 px-0 mb-0 pb-2.5 md:pb-0 lg:px-0 pt-2.5">
+    <div class="flex flex-wrap justify-between items-center w-full">
+      <div class="ml-10 md:ml-16 mr-12">
+        <a href="#" class="taker">
+          <img src="./images/reallog.png" class="img h-6 sm:h-8" alt="Logo" />
+        </a>
+      </div>
       <div class="flex items-center lg:order-2 mr-10 md:mr-0">
         <button @click="toggleSidebar" data-collapse-toggle="mobile-menu-2" type="button"
           class="inline-flex justify-end justify-self-end items-right p-2 ml-1 text-gray-500 rounded-lg xl:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
@@ -24,7 +26,7 @@
       <div @mouseover="toggleBlur(true)" @mouseleave="toggleBlur(false)"
         class="relative z-10 w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
         <ul
-          class="hidden border-2 border-gray-200 lg:flex lg:flex-row lg:space-x-8 lg:mt-0 lg:hover:bg-white mt-4 font-medium  rounded-full py-2 px-2 ml-20">
+          class="hidden border-2 border-gray-200 lg:flex lg:flex-row lg:space-x-8 lg:mt-0 lg:hover:bg-white font-medium rounded-full py-2 mt-4">
           <PopoverGroup class="lg:gap-x-12">
             <Popover class="relative">
               <PopoverButton
@@ -50,10 +52,9 @@
                       <div class="customHover flex-auto pr-5">
                         <a :href="item.href" class="block font-semibold text-white">
                           {{ item.name }}
-                        </a>                       
+                        </a>
                       </div>
-                      <div
-                        v-if="index === 0" 
+                      <div v-if="index === 0"
                         class="absolute bottom-0 left-0 w-11/12 h-1.5 rounded-full border border-slate-50 mx-4 opacity-30">
                       </div>
                     </div>
@@ -97,7 +98,7 @@
                       <div class="customHover flex justify-start pl-1">
                         <a href="#" class="block flex font-semibold text-white">
                           İş Yeri Psikoloğu
-                        </a>       
+                        </a>
                       </div>
                       <div
                         class="absolute bottom-0 left-0 w-10/12 h-1.5 rounded-full border border-slate-50 mx-4 opacity-30">
@@ -152,8 +153,8 @@
                 leave-active-class="transition ease-in duration-150" leave-from-class="opacity-100 translate-x-0"
                 leave-to-class="opacity-0 translate-x-1">
                 <div v-show="opup"
-                  class="absolute sm:left-72 sm:mt-4 lg:mt-0 left-full top-12 ml-24 z-10 h-80 w-80 max-w-md overflow-hidden rounded-r-3xl shadow-lg ring-1 ring-gray-900/5" style="background-color: #A80000;"
-                  @mouseover="opup = true" @mouseleave="opup = false">
+                  class="absolute sm:left-72 sm:mt-4 lg:mt-0 left-full top-12 ml-24 z-10 h-80 w-80 max-w-md overflow-hidden rounded-r-3xl shadow-lg ring-1 ring-gray-900/5"
+                  style="background-color: #A80000;" @mouseover="opup = true" @mouseleave="opup = false">
                   <div class="p-4 pl-5 pt-7 pb-0">
                     <div class="group relative flex items-center rounded-lg p-4 leading-6">
                       <div class="customHover flex-auto pl-1">
@@ -180,8 +181,8 @@
                 leave-active-class="transition ease-in duration-150" leave-from-class="opacity-100 translate-x-0"
                 leave-to-class="opacity-0 translate-x-1">
                 <div v-show="opup3"
-                  class="absolute sm:left-72 sm:mt-4 lg:mt-0 left-full top-12 ml-24 z-10 h-80 w-80 max-w-md overflow-hidden rounded-r-3xl shadow-lg ring-1 ring-gray-900/5" style="background-color: #A80000;"
-                  @mouseover="opup3 = true" @mouseleave="opup3 = false">
+                  class="absolute sm:left-72 sm:mt-4 lg:mt-0 left-full top-12 ml-24 z-10 h-80 w-80 max-w-md overflow-hidden rounded-r-3xl shadow-lg ring-1 ring-gray-900/5"
+                  style="background-color: #A80000;" @mouseover="opup3 = true" @mouseleave="opup3 = false">
                   <div class="p-4 pl-6 pt-7 pb-0">
                     <div class="group relative flex items-center gap-x-6 rounded-lg p-4 leading-6">
                       <div class="customHover flex-auto pl-1">
@@ -242,22 +243,22 @@
           <li>
             <a href="#"
               class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-sento lg:p-0 ">{{
-                $t('navBtnName4') }}</a>
+              $t('navBtnName4') }}</a>
           </li>
           <li>
             <a href="#"
               class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-sento lg:p-0 ">{{
-                $t('navBtnName5') }}</a>
+              $t('navBtnName5') }}</a>
           </li>
           <li>
             <a href="#"
               class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-sento lg:p-0 ">{{
-                $t('navBtnName6') }}</a>
+              $t('navBtnName6') }}</a>
           </li>
         </ul>
       </div>
       <div v-if="menuOpen" class="hidden xl:flex xl:w-auto xl:justify-left flex-wrap justify-center lg:order-1">
-        <div class="w-full xl:w-auto xl:mt-2 xl:w-3/7 p-2 text-center">
+        <div class="w-full xl:w-auto xl:mt-3 xl:w-3/7 xl:-ml-16 p-2 text-center">
           <a href="#" class="text-black uppercase bg-sento-gray focus:ring-4 rounded-full p-2 mr-2 "
             style="background-color: #EFF1F2;">
             {{ $t('psy') }}
@@ -266,7 +267,10 @@
         <div class="xl:w-4/7 p-2 text-center">
           <button class="mixed-button">
             <span class="btn-text">{{ $t('fast') }}</span>
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="m509-540 30 30 211-211-30-30-211 211ZM189-189h29l232-232-30-30-231 232v30Zm384-198L387-574l163-163-30-30-218 218-78-77 208-208q37-37 89-37t89 37l19 18 47-47q19-19 44.5-19t44.5 19l97 97q19 19 19 45t-19 45L573-387ZM265-79H78v-186l309-309 186 187L265-79Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+              <path
+                d="m509-540 30 30 211-211-30-30-211 211ZM189-189h29l232-232-30-30-231 232v30Zm384-198L387-574l163-163-30-30-218 218-78-77 208-208q37-37 89-37t89 37l19 18 47-47q19-19 44.5-19t44.5 19l97 97q19 19 19 45t-19 45L573-387ZM265-79H78v-186l309-309 186 187L265-79Z" />
+            </svg>
           </button>
         </div>
       </div>
@@ -329,6 +333,11 @@ function toggleBlur(value) {
 </script>
 
 <style>
+.taker {
+  display: flex;
+  align-items: center;
+}
+
 .taker img {
   position: absolute;
   opacity: 1;

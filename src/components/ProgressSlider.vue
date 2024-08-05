@@ -1,53 +1,56 @@
 <template>
   <div class="relative overflow-hidden h-auto mb-10 md:mb-0 xl:h-auto">
     <template v-for="(item, index) in items" :key="index">
-      <TransitionRoot :show="active === index" enter="transition ease-out duration-500 transform"
-        enterFrom="translate-x-full" enterTo="translate-x-0" leave="transition ease-in duration-500 transform absolute"
-        leaveFrom="translate-x-0" leaveTo="-translate-x-full" @before-enter="heightFix()" class="inset-0">
-        <div class="relative bg-sento rounded-3xl mx-4 px-0 sm:mx-8 sm:px-14 mt-20">
-          <div class="flex justify-center md:justify-start text-left text-white z-0">
-            <div class="w-3/5 xl:mt-20 xl:mb-20">
-              <p class="text-3xl md:text-6xl xl:text-7xl font-normal sm:font-semibold py-3">{{ item.letter }}</p>
-              <p class="text-lg md:text-xl font-light sm:font-normal py-3">{{ item.letter2 }}</p>
-              <div class="ml-2 md:ml-0 w-48 md:w-52">
-                <button class="mixed-button">
-                  <span class="btn-text">{{ $t('fast') }}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
-                    <path d="M592-417H126v-126h466L390-745l90-89 354 354-354 354-90-89 202-202Z" />
-                  </svg>
-                </button>
+      <div class="bg-sento relative bg-sento rounded-3xl mx-4 px-0 sm:mx-8 sm:px-14 overflow-hidden">
+        <TransitionRoot :show="active === index" enter="transition ease-out duration-300 transform"
+          enterFrom="translate-x-full" enterTo="translate-x-0"
+          leave="transition ease-in duration-300 transform absolute" leaveFrom="translate-x-0"
+          leaveTo="-translate-x-full" @before-enter="heightFix()" class="inset-0 ">
+          <div class="relative mt-20 overflow-hidden">
+            <div class="flex justify-center md:justify-start text-left text-white z-0">
+              <div class="w-3/5 xl:mt-20 xl:mb-20">
+                <p class="text-3xl md:text-6xl xl:text-7xl font-normal sm:font-semibold py-3">{{ item.letter }}</p>
+                <p class="text-lg md:text-xl font-light sm:font-normal py-3">{{ item.letter2 }}</p>
+                <div class="ml-2 md:ml-0 w-48 md:w-52">
+                  <button class="mixed-button">
+                    <span class="btn-text">{{ $t('fast') }}</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+                      <path d="M592-417H126v-126h466L390-745l90-89 354 354-354 354-90-89 202-202Z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="hidden md:block w-2/5 bottom-0 right-0 mr-0 pr-0 pl-0 ml-0 mt-20 absolute z-0">
+                <img class="rounded-xl ml-auto mr-0 pointer-events-none" :src="item.img" width="430" height="470"
+                  :alt="item.desc" />
               </div>
             </div>
-            <div class="hidden md:block w-2/5 bottom-0 right-0 mr-0 pr-0 pl-0 ml-0 mt-20 absolute z-0">
-              <img class="rounded-xl ml-auto mr-0 pointer-events-none" :src="item.img" width="430" height="470"
-                :alt="item.desc" />
+
+            <div class="mx-auto flex justify-center space-x-4 z-10 bg-sento rounded-3xl mt-0">
+              <template v-for="(item, index) in items" :key="index">
+                <button v-if="getPositionClass(index) !== 'inactive'"
+                  class="group relative rounded mb-4 focus:outline-none focus-visible:ring focus-visible:ring-indigo-300"
+                  @click="active = index">
+                  <span class="flex flex-col items-center text-center transition-opacity"
+                    :class="getPositionClass(index)">
+                    <div class="relative flex items-center justify-center">
+                      <svg class="progress-circle" viewBox="0 0 36 36">
+                        <path class="circle-bg" d="M18 2.0845
+                   a 15.9155 15.9155 0 0 1 0 31.831
+                   a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle" :style="{ strokeDasharray: `${active === index ? progress : 0}, 100` }" d="M18 2.0845
+                   a 15.9155 15.9155 0 0 1 0 31.831
+                   a 15.9155 15.9155 0 0 1 0 -31.831" />
+                      </svg>
+                      <span class="absolute text-sm text-center font-medium text-white">{{ index + 1 }}</span>
+                    </div>
+                  </span>
+                </button>
+              </template>
             </div>
           </div>
-
-          <div class="mx-auto flex justify-center space-x-4 z-10 bg-sento rounded-3xl mt-0">
-            <template v-for="(item, index) in items" :key="index">
-              <button v-if="getPositionClass(index) !== 'inactive'"
-                class="group relative rounded mb-4 focus:outline-none focus-visible:ring focus-visible:ring-indigo-300"
-                @click="active = index">
-                <span class="flex flex-col items-center text-center transition-opacity"
-                  :class="getPositionClass(index)">
-                  <div class="relative flex items-center justify-center">
-                    <svg class="progress-circle" viewBox="0 0 36 36">
-                      <path class="circle-bg" d="M18 2.0845
-                   a 15.9155 15.9155 0 0 1 0 31.831
-                   a 15.9155 15.9155 0 0 1 0 -31.831" />
-                      <path class="circle" :style="{ strokeDasharray: `${active === index ? progress : 0}, 100` }" d="M18 2.0845
-                   a 15.9155 15.9155 0 0 1 0 31.831
-                   a 15.9155 15.9155 0 0 1 0 -31.831" />
-                    </svg>
-                    <span class="absolute text-sm text-center font-medium text-white">{{ index + 1 }}</span>
-                  </div>
-                </span>
-              </button>
-            </template>
-          </div>
-        </div>
-      </TransitionRoot>
+        </TransitionRoot>
+      </div>
     </template>
   </div>
 </template>
@@ -220,9 +223,11 @@ button .absolute {
   transition: width 0.3s ease-in-out;
   @apply text-sento font-medium rounded-full text-xs px-5 my-3 me-2 mb-2 uppercase border-2 border-dashed;
 }
+
 .mixed-button:hover {
   text-align: left;
 }
+
 .mixed-button:hover .btn-text {
   position: relative;
   display: inline-block;
@@ -261,5 +266,4 @@ button .absolute {
   transform: translateX(-10px) translateY(100%);
   fill: #e61111;
 }
-
 </style>
