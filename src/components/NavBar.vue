@@ -1,5 +1,5 @@
 <template>
-  <nav class="relative bg-white backdrop-blur-md bg-opacity-80 px-0 mb-0 pb-2.5 md:pb-0 lg:px-0 pt-2.5">
+  <nav class="relative bg-white px-0 mb-0 pb-2.5 md:pb-0 lg:px-0 pt-2.5">
     <div class="flex flex-wrap justify-between items-center w-full">
       <div class="ml-10 md:ml-16 mr-12">
         <a href="#" class="taker">
@@ -276,8 +276,8 @@
       </div>
       <div v-if="isBlurred" class="absolute inset-0 z-0 backdrop-brightness-50"></div>
     </div>
-    <NavBarsSide v-model="isSidebarOpen" />
   </nav>
+  <NavBarsSide v-model="isSidebarOpen" />
 </template>
 <script setup>
 import { ref, defineEmits } from 'vue';

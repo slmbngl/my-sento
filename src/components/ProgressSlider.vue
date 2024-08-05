@@ -6,9 +6,9 @@
           enterFrom="translate-x-full" enterTo="translate-x-0"
           leave="transition ease-in duration-300 transform absolute" leaveFrom="translate-x-0"
           leaveTo="-translate-x-full" @before-enter="heightFix()" class="inset-0 ">
-          <div class="relative mt-20 overflow-hidden">
+          <div class="relative mt-10 md:mt-20 overflow-hidden">
             <div class="flex justify-center md:justify-start text-left text-white z-0">
-              <div class="w-3/5 xl:mt-20 xl:mb-20">
+              <div class="w-3/5 mt-0 mb-10 xl:mt-20 xl:mb-20">
                 <p class="text-3xl md:text-6xl xl:text-7xl font-normal sm:font-semibold py-3">{{ item.letter }}</p>
                 <p class="text-lg md:text-xl font-light sm:font-normal py-3">{{ item.letter2 }}</p>
                 <div class="ml-2 md:ml-0 w-48 md:w-52">
