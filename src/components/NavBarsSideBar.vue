@@ -1,6 +1,6 @@
 <template>
 	<!-- Sidebar -->
-	<div v-if="modelValue" class="relative flex w-full lg:w-2/5 top-0 h-screen right-0 backdrop-blur-md bg-white/30 flex-row ">
+	<div v-if="modelValue" class="relative flex w-full lg:w-3/5 top-0 h-screen right-0 backdrop-blur-md bg-white/30 flex-row float-right">
 		<!-- Sidebar Content -->
 		<div ref="content"
 			class="w-full transition-all duration-700 overflow-hidden flex items-start justify-start relative ml-10">

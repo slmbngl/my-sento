@@ -1,12 +1,12 @@
 <template>
-  <nav class="relative bg-white px-0 mb-0 pb-2.5 md:pb-0 lg:px-0 pt-2.5">
+  <nav class="relative bg-white px-0 mb-0 pb-2.5 xl:pb-0 lg:px-0 pt-2.5">
     <div class="flex flex-wrap justify-between items-center w-full">
       <div class="ml-10 md:ml-16 mr-12">
         <a href="#" class="taker">
           <img src="./images/reallog.png" class="img h-6 sm:h-8" alt="Logo" />
         </a>
       </div>
-      <div class="flex items-center lg:order-2 mr-10 md:mr-0">
+      <div class="flex items-center lg:order-2 mr-10 xl:mr-0">
         <button @click="toggleSidebar" data-collapse-toggle="mobile-menu-2" type="button"
           class="inline-flex justify-end justify-self-end items-right p-2 ml-1 text-gray-500 rounded-lg xl:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
           aria-controls="mobile-menu-2" aria-expanded="false">
