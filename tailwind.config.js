@@ -36,12 +36,16 @@ export default {
         cst: '512px',
         custom: '540px',
         customtwo: '796px',
+        active:'470px'
       },
       width:{
-        cst:'450px'
+        cst:'450px',
+        active:'470px',
+        active2:'360px'
       },
       margin:{
-        cst:'450px'
+        cst:'450px',
+        active:'470px'
       },
       transitionDuration:{
         transdur: '5000ms'

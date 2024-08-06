@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex flex-col items-end w-full h-full">
+  <div class="relative flex flex-col items-end w-full h-full mx-1">
     <div class="order-last md:order-firt flex mt-4 md:mt-0 md:absolute top-0 right-0 z-10">
       <button @click="prevCard" class="p-2 mr-2 bg-gray-300 hover:bg-sento rounded-full">
         <svg class="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -12,9 +12,9 @@
         </svg>
       </button>
     </div>
-    <div class="flex order-firt md:order-last overflow-hidden w-full h-full mt-14">
+    <div class="flex order-firt md:order-last overflow-hidden w-full h-full mt-14 pl-3 md:pl-72">
       <div v-for="(card, index) in loopedCards" :key="index"
-        :class="['flex-none transition-transform duration-300', { ' mx-0 w-96 md:ml-96': index === 0, ' mx-0 w-96 ml-7 md:ml-0 mr-0 md:mr-24': index === activeIndex && index !== 0, ' mx-0 w-96 ': index !== activeIndex }]"
+        :class="['flex-none transition-transform duration-300', { ' mx-0 w-72 md:mr-48 md:-ml-5': index === activeIndex && index !== 0, 'w-72': index !== activeIndex }]"
         :style="{ transform: `translateX(-${activeIndex * 100}%)` }">
         <CardComponent :title="card.title" :description="card.description" :isActive="index === activeIndex" />
       </div>

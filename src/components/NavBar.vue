@@ -1,7 +1,7 @@
 <template>
-  <nav class="relative bg-white px-0 mb-0 pb-2.5 xl:pb-0 lg:px-0 pt-2.5">
+  <nav class="relative px-0 mb-0 pb-2.5 xl:pb-0 lg:px-0 pt-2.5 backdrop-blur-md bg-white/80 bg-opacity-50">
     <div class="flex flex-wrap justify-between items-center w-full">
-      <div class="ml-10 md:ml-16 mr-12">
+      <div class="mr-28 ml-10 md:ml-16">
         <a href="#" class="taker">
           <img src="./images/reallog.png" class="img h-6 sm:h-8" alt="Logo" />
         </a>
@@ -26,7 +26,7 @@
       <div @mouseover="toggleBlur(true)" @mouseleave="toggleBlur(false)"
         class="relative z-10 w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
         <ul
-          class="hidden border-2 border-gray-200 lg:flex lg:flex-row lg:space-x-8 lg:mt-0 lg:hover:bg-white font-medium rounded-full py-2 mt-4">
+          class="hidden border-2 border-gray-200 lg:flex lg:flex-row lg:space-x-8 lg:mt-0 lg:hover:bg-white font-medium rounded-full py-2 px-5 2xl:px-10 mt-4">
           <PopoverGroup class="lg:gap-x-12">
             <Popover class="relative">
               <PopoverButton
@@ -35,7 +35,7 @@
                 {{ $t('navBtnName') }}
                 <ChevronDownIcon class="h-5 w-5 flex-none text-sento" aria-hidden="true" />
               </PopoverButton>
-              <transition enter-active-class="transition ease-out duration-200"
+              <Transition enter-active-class="transition ease-out duration-200"
                 enter-from-class="opacity-0 translate-y-1" enter-to-class="opacity-100 translate-y-0"
                 leave-active-class="transition ease-in duration-150" leave-from-class="opacity-100 translate-y-0"
                 leave-to-class="opacity-0 translate-y-1">
@@ -60,7 +60,7 @@
                     </div>
                   </div>
                 </div>
-              </transition>
+              </Transition>
             </Popover>
           </PopoverGroup>
           <PopoverGroup class="lg:gap-x-12" @mouseover="groupPanelOpen2 = true" @mouseleave="groupPanelOpen2 = false">
@@ -70,7 +70,7 @@
                 {{ $t('navBtnName2') }}
                 <ChevronDownIcon class="h-5 w-5 flex-none text-sento" aria-hidden="true" />
               </PopoverButton>
-              <transition enter-active-class="transition ease-out duration-200"
+              <Transition enter-active-class="transition ease-out duration-200"
                 enter-from-class="opacity-0 translate-y-1" enter-to-class="opacity-100 translate-y-0"
                 leave-active-class="transition ease-in duration-150" leave-from-class="opacity-100 translate-y-0"
                 leave-to-class="opacity-0 translate-y-1">
@@ -115,9 +115,9 @@
                       </div>
                     </div>
                     <div class="group relative flex items-center rounded-lg p-4 leading-6">
-                      <div class="customHover flex justify-start pl-1">
-                        <a href="#" class="block flex font-semibold text-white" @mouseover="opup3 = true"
-                          @mouseleave="opup3 = false">
+                      <div class="customHover1 flex justify-start pl-1"  @mouseover="opup3 = true" @mouseleave="opup3 = false"
+                       >
+                        <a href="#" class="font-semibold text-white">
                           {{ t('navbtn3') }}
                         </a>
                         <div class="flex flex-grow justify-end items-center mr-6">
@@ -131,10 +131,10 @@
                         class="absolute bottom-0 left-0 w-10/12 h-1.5 rounded-full border border-slate-50 mx-4 opacity-30">
                       </div>
                     </div>
-                    <div class="group relative flex items-center rounded-lg p-4 leading-6">
-                      <div class="customHover flex justify-start pl-1">
-                        <a href="#" class="block flex font-semibold text-white" @mouseover="opup = true"
-                          @mouseleave="opup = false">
+                    <div class="group relative flex items-center rounded-lg p-4 leading-6 w-full">
+                      <div class="customHover flex justify-start pl-1" @mouseover="opup = true"
+                        @mouseleave="opup = false">
+                        <a href="#" class="block flex font-semibold text-white w-34">
                           {{ t('navbtn4') }}
                         </a>
                         <div class="flex flex-grow justify-end items-center mr-6">
@@ -147,14 +147,14 @@
                     </div>
                   </div>
                 </div>
-              </transition>
-              <transition enter-active-class="transition ease-out duration-500"
+              </Transition>
+              <Transition enter-active-class="transition ease-out duration-500"
                 enter-from-class="opacity-0 -translate-x-72" enter-to-class="opacity-100 translate-x-0"
-                leave-active-class="transition ease-in duration-150" leave-from-class="opacity-100 translate-x-0"
-                leave-to-class="opacity-0 translate-x-1">
+                leave-active-class="transition ease-in duration-300" leave-from-class="opacity-100 translate-x-0"
+                leave-to-class="opacity-0 -translate-x-72">
                 <div v-show="opup"
                   class="absolute sm:left-72 sm:mt-4 lg:mt-0 left-full top-12 ml-24 z-10 h-80 w-80 max-w-md overflow-hidden rounded-r-3xl shadow-lg ring-1 ring-gray-900/5"
-                  style="background-color: #A80000;" @mouseover="opup = true" @mouseleave="opup = false">
+                  style="background-color: #A80000;">
                   <div class="p-4 pl-5 pt-7 pb-0">
                     <div class="group relative flex items-center rounded-lg p-4 leading-6">
                       <div class="customHover flex-auto pl-1">
@@ -175,14 +175,14 @@
                     </div>
                   </div>
                 </div>
-              </transition>
-              <transition enter-active-class="transition ease-out duration-500"
+              </Transition>
+              <Transition enter-active-class="transition ease-out duration-500"
                 enter-from-class="opacity-0 -translate-x-72" enter-to-class="opacity-100 translate-x-0"
-                leave-active-class="transition ease-in duration-150" leave-from-class="opacity-100 translate-x-0"
-                leave-to-class="opacity-0 translate-x-1">
+                leave-active-class="transition ease-in duration-300" leave-from-class="opacity-100 translate-x-0"
+                leave-to-class="opacity-0 -translate-x-72">
                 <div v-show="opup3"
                   class="absolute sm:left-72 sm:mt-4 lg:mt-0 left-full top-12 ml-24 z-10 h-80 w-80 max-w-md overflow-hidden rounded-r-3xl shadow-lg ring-1 ring-gray-900/5"
-                  style="background-color: #A80000;" @mouseover="opup3 = true" @mouseleave="opup3 = false">
+                  style="background-color: #A80000;">
                   <div class="p-4 pl-6 pt-7 pb-0">
                     <div class="group relative flex items-center gap-x-6 rounded-lg p-4 leading-6">
                       <div class="customHover flex-auto pl-1">
@@ -203,8 +203,8 @@
                     </div>
                   </div>
                 </div>
-              </transition>
-              <transition enter-active-class="transition ease-out duration-200"
+              </Transition>
+              <Transition enter-active-class="transition ease-out duration-200"
                 enter-from-class="opacity-0 translate-x-1" enter-to-class="opacity-100 translate-x-0"
                 leave-active-class="transition ease-in duration-150" leave-from-class="opacity-100 translate-x-0"
                 leave-to-class="opacity-0 translate-x-1">
@@ -232,12 +232,12 @@
                     </div>
                   </div>
                 </div>
-              </transition>
+              </Transition>
             </Popover>
           </PopoverGroup>
           <li>
             <a href="#"
-              class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-sento lg:p-0 "
+              class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-sento lg:p-0"
               aria-current="page">{{ $t('navBtnName3') }}</a>
           </li>
           <li>
@@ -258,7 +258,7 @@
         </ul>
       </div>
       <div v-if="menuOpen" class="hidden xl:flex xl:w-auto xl:justify-left flex-wrap justify-center lg:order-1">
-        <div class="w-full xl:w-auto xl:mt-3 xl:w-3/7 xl:-ml-16 p-2 text-center">
+        <div class="w-full xl:w-auto xl:mt-3 xl:w-3/7 ml-0 2xl:ml-10 p-2 text-center">
           <a href="#" class="text-black uppercase bg-sento-gray focus:ring-4 rounded-full p-2 mr-2 "
             style="background-color: #EFF1F2;">
             {{ $t('psy') }}
@@ -366,10 +366,23 @@ function toggleBlur(value) {
 .customHover {
   opacity: 1;
   transition: transform 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
   @apply flex-auto pr-5;
 }
 
 .customHover:hover {
+  transform: translateX(10px) translateY(0);
+}
+.customHover1 {
+  opacity: 1;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+  @apply flex-auto pr-5;
+}
+
+.customHover1:hover {
   transform: translateX(10px) translateY(0);
 }
 

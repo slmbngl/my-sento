@@ -42,7 +42,7 @@ const menuItems = [
 </script>
 <template>
   <div :class="{ 'blurred': isBlurred }" class="min-h-screen relative">
-    <header class="fixed backdrop-blur-md mb-0 bg-opacity-75 top-0 w-full z-30 shadow-lg">
+    <header class="fixed mb-0 top-0 w-full z-30 shadow-lg">
       <NavBar @toggleBlur="handleToggleBlur" />
     </header>
     <main>
