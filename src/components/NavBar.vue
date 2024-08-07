@@ -64,7 +64,7 @@
             </Popover>
           </PopoverGroup>
           <PopoverGroup class="lg:gap-x-12" @mouseover="groupPanelOpen2 = true" @mouseleave="groupPanelOpen2 = false">
-            <Popover class="relative">
+            <Popover class="relative" @mouseleave="handlePopoverClose()">
               <PopoverButton
                 class="flex items-center gap-x-1 leading-6 py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-sento lg:p-0 ">
                 {{ $t('navBtnName2') }}
@@ -115,8 +115,8 @@
                       </div>
                     </div>
                     <div class="group relative flex items-center rounded-lg p-4 leading-6">
-                      <div class="customHover1 flex justify-start pl-1"  @mouseover="opup3 = true" @mouseleave="opup3 = false"
-                       >
+                      <div class="customHover1 flex justify-start pl-1" @mouseover="handleMouseover2()"
+                        @mouseleave="handleMouseleave2()">
                         <a href="#" class="font-semibold text-white">
                           {{ t('navbtn3') }}
                         </a>
@@ -132,8 +132,8 @@
                       </div>
                     </div>
                     <div class="group relative flex items-center rounded-lg p-4 leading-6 w-full">
-                      <div class="customHover flex justify-start pl-1" @mouseover="opup = true"
-                        @mouseleave="opup = false">
+                      <div class="customHover flex justify-start pl-1" @mouseover="handleMouseover()"
+                        @mouseleave="handleMouseleave()">
                         <a href="#" class="block flex font-semibold text-white w-34">
                           {{ t('navbtn4') }}
                         </a>
@@ -148,11 +148,12 @@
                   </div>
                 </div>
               </Transition>
-              <Transition enter-active-class="transition ease-out duration-500"
+              <Transition @before-enter="beforeEnter()" @after-enter="afterEnter()" @before-leave="beforeLeave()"
+                @after-leave="afterLeave()" enter-active-class="transition ease-out duration-300"
                 enter-from-class="opacity-0 -translate-x-72" enter-to-class="opacity-100 translate-x-0"
                 leave-active-class="transition ease-in duration-300" leave-from-class="opacity-100 translate-x-0"
                 leave-to-class="opacity-0 -translate-x-72">
-                <div v-show="opup"
+                <div v-if="opup" @mouseover="handleMouseover()" @mouseleave="handleMouseleave()"
                   class="absolute sm:left-72 sm:mt-4 lg:mt-0 left-full top-12 ml-24 z-10 h-80 w-80 max-w-md overflow-hidden rounded-r-3xl shadow-lg ring-1 ring-gray-900/5"
                   style="background-color: #A80000;">
                   <div class="p-4 pl-5 pt-7 pb-0">
@@ -176,11 +177,12 @@
                   </div>
                 </div>
               </Transition>
-              <Transition enter-active-class="transition ease-out duration-500"
+              <Transition @before-enter="beforeEnter2()" @after-enter="afterEnter2()" @before-leave="beforeLeave2()"
+                @after-leave="afterLeave2()" enter-active-class="transition ease-out duration-300"
                 enter-from-class="opacity-0 -translate-x-72" enter-to-class="opacity-100 translate-x-0"
-                leave-active-class="transition ease-in duration-300" leave-from-class="opacity-100 translate-x-0"
+                leave-active-class="transition ease-in duration-300 " leave-from-class="opacity-100 translate-x-0"
                 leave-to-class="opacity-0 -translate-x-72">
-                <div v-show="opup3"
+                <div v-if="opup3" @mouseover="handleMouseover2()" @mouseleave="handleMouseleave2()"
                   class="absolute sm:left-72 sm:mt-4 lg:mt-0 left-full top-12 ml-24 z-10 h-80 w-80 max-w-md overflow-hidden rounded-r-3xl shadow-lg ring-1 ring-gray-900/5"
                   style="background-color: #A80000;">
                   <div class="p-4 pl-6 pt-7 pb-0">
@@ -243,17 +245,17 @@
           <li>
             <a href="#"
               class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-sento lg:p-0 ">{{
-              $t('navBtnName4') }}</a>
+                $t('navBtnName4') }}</a>
           </li>
           <li>
             <a href="#"
               class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-sento lg:p-0 ">{{
-              $t('navBtnName5') }}</a>
+                $t('navBtnName5') }}</a>
           </li>
           <li>
             <a href="#"
               class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-sento lg:p-0 ">{{
-              $t('navBtnName6') }}</a>
+                $t('navBtnName6') }}</a>
           </li>
         </ul>
       </div>
@@ -304,6 +306,85 @@ const products3 = [
   { name: t('navbtn5'), href: '#' },
   { name: t('navbtn6'), href: '#' },
 ];
+
+const handlePopoverClose = () => {
+  // Diğer bileşenlerin kapanmasını sağla
+  groupPanelOpen2.value = false;
+  opup.value = false;
+  opup2.value = false;
+  opup3.value = false;
+};
+
+const closeAllPopups = () => {
+  opup.value = false;
+  opup3.value = false;
+};
+
+let isTransitioning = ref(false);
+let isTransitioning2 = ref(false);
+
+const beforeEnter = () => {
+  isTransitioning.value = true;
+};
+
+const afterEnter = () => {
+  setTimeout(() => {
+    isTransitioning.value = false;
+  }, 300);
+};
+
+const beforeLeave = () => {
+  isTransitioning.value = true;
+};
+
+const afterLeave = () => {
+  isTransitioning.value = false;
+};
+
+
+const beforeEnter2 = () => {
+  isTransitioning2.value = true;
+};
+
+const afterEnter2 = () => {
+  setTimeout(() => {
+    isTransitioning2.value = false;
+  }, 300);
+};
+
+const beforeLeave2 = () => {
+  isTransitioning2.value = true;
+};
+
+const afterLeave2 = () => {
+  isTransitioning2.value = false;
+};
+
+const handleMouseover = () => {
+  if (!isTransitioning.value && !opup.value) {
+    closeAllPopups(); // Close all popups before opening the new one
+    opup.value = true;
+  }
+};
+
+const handleMouseleave = () => {
+  if (!isTransitioning.value) {
+    opup.value = false;
+  }
+};
+
+const handleMouseover2 = () => {
+  if (!isTransitioning2.value && !opup3.value) {
+    closeAllPopups(); // Close all popups before opening the new one
+    opup3.value = true;
+  }
+};
+
+const handleMouseleave2 = () => {
+  if (!isTransitioning2.value) {
+    opup3.value = false;
+  }
+};
 
 const mobileMenuOpen = ref(false);
 const menuOpen = ref(true);
@@ -374,6 +455,7 @@ function toggleBlur(value) {
 .customHover:hover {
   transform: translateX(10px) translateY(0);
 }
+
 .customHover1 {
   opacity: 1;
   transition: transform 0.5s ease-in-out;
