@@ -187,7 +187,7 @@ const menuItems = [
                 Ümraniye/İSTANBUL</a>
             </div>
             <div class="w-9/12 mx-8 md:mx-16 h-1 rounded-full border border-gray-400"></div>
-            <div class="mx-8 md:mx-16 mb-2">
+            <div class="mx-8 md:mx-16 mt-2">
               <a class="text-gray-200 text-base">Ara Bizi</a> <br>
               <a class="text-gray-200 text-3xl font-normal">0850 840 67 08</a>
 
