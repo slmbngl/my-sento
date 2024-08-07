@@ -42,6 +42,8 @@ export default {
         cst:'450px',
         active:'470px',
         active2:'360px'
+        ,
+        custom: '540px'
       },
       margin:{
         cst:'450px',
