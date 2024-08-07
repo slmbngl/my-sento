@@ -132,9 +132,9 @@ const menuItems = [
       </section>
     </main>
     <footer>
-      <Footer class="mt-8 md:mt-8 ml-8 md:ml-52 w-4/5" />
-      <div class=" relative flex flex-col md:flex-row ">
-        <div class="order-last md:w-7/12 h-auto rounded-3xl m-10 pt-5" style="background-color: #EFF1F2;">
+      <Footer class="order-first mb-0 md:mb-96 xl:mb-0 mt-8 md:mt-8 ml-8 top-0 md:top-40 xl:top-0 md:ml-0 xl:ml-52 w-4/5 md:w-3/5 xl:w-4/5" />
+      <div class="flex flex-col md:flex-row pt-10">
+        <div class="order-last lg:w-full xl:w-7/12 h-auto md:h-custom xl:h-auto rounded-3xl m-10 md:m-2 xl:m-10 mt-4 md:mt-6 xl:mt-0 pt-5" style="background-color: #EFF1F2;">
           <div class="flex flex-col md:flex-row md:justify-between items-center">
             <img class="h-8 mt-4 md:ml-20" src="../components/images/reallog.png" alt="">
             <Selector class="mt-4 md:mr-20" />
@@ -176,23 +176,23 @@ const menuItems = [
           </div>
         </div>
 
-        <div class="order-first md:absolute md:w-custom ml-8 md:ml-0 mr-8 right-0 bottom-10 right-0 mt-24 md:mt-0">
+        <div class="order-first md:absolute md:w-1/2 xl:w-custom ml-8 md:ml-0 mr-8 md:mr-2 xl:mr-8 right-0 bottom-10 md:bottom-96 xl:bottom-10 md:mb-44 xl:mb-0 right-0 mt-24 md:mt-0">
           <div class="column-4 bg-black rounded-3xl h-auto">
-            <div class="h-96 z-10 mx-4 py-4 rounded-3xl">
+            <div class="h-96 md:h-80 lg:h-96 z-10 mx-4 py-4 rounded-3xl">
               <Google />
             </div>
-            <div class="mx-8 md:mx-16 mt-0 mb-2">
+            <div class="mx-8 md:mx-8 lg:mx-16 mt-0 mb-2">
               <a class="text-gray-200 text-base">Adresimiz</a> <br>
               <a class="text-gray-200 text-3xl font-normal">Mevlana Mah. Mimoza Sk. İsmet İki Telli NO:3 İç Kapı: 33
                 Ümraniye/İSTANBUL</a>
             </div>
-            <div class="w-9/12 mx-8 md:mx-16 h-1 rounded-full border border-gray-400"></div>
+            <div class="w-9/12 mx-8 md:mx-8 lg:mx-16 h-1 rounded-full border border-gray-400"></div>
             <div class="mx-8 md:mx-16 mt-2">
               <a class="text-gray-200 text-base">Ara Bizi</a> <br>
               <a class="text-gray-200 text-3xl font-normal">0850 840 67 08</a>
 
             </div>
-            <div class="w-9/12 mx-8 md:mx-16 h-1 rounded-full border border-gray-400"></div>
+            <div class="w-9/12 mx-8 md:mx-8 lg:mx-16 h-1 rounded-full border border-gray-400"></div>
 
             <div class="mx-8 md:mx-16 mt-2">
               <a class="text-gray-200 text-base">Bize e-posta gönder</a> <br>
@@ -235,7 +235,7 @@ const menuItems = [
               </div>
             </div>
           </div>
-          <div class="flex hidden md:block">
+          <div class="flex hidden xl:block">
             <p class="mx-10 text-lg">KVKK</p>
             <p class="text-lg">Çerez Politikası</p>
           </div>

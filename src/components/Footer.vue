@@ -1,6 +1,6 @@
 <template>
-    <div class="relative justify-between items-center w-1/2">
-        <img src="./images/Notification.png" alt="" class="md:h-96">
+    <div class="relative justify-between items-center ">
+        <img src="./images/Notification.png" alt="" class="h-96 md:h-80 lg:h-96 ">
         <div class="absolute h-60 w-60 top-32 left-1/4 backdrop-blur-md bg-white/10 rounded-full rounded-br-none shadow-2xl ">
             <button class="mixed-button mt-24 ml-5" style="width: 200px;text-align: center;"><span class="btn-text whitespace-nowrap" style="flex-wrap: nowrap;">TOPLANTI PLANLA</span><svg
                     xmlns="http://www.w3.org/2000/svg" height="24" width="21" viewBox="0 0 448 512">
