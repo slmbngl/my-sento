@@ -133,8 +133,8 @@ const menuItems = [
     </main>
     <footer>
       <Footer class="order-first mb-0 md:mb-96 xl:mb-0 mt-8 md:mt-8 ml-8 top-0 md:top-40 xl:top-0 md:ml-0 xl:ml-52 w-4/5 md:w-3/5 xl:w-4/5" />
-      <div class="flex flex-col md:flex-row pt-10">
-        <div class="order-last lg:w-full xl:w-7/12 h-auto md:h-custom xl:h-auto rounded-3xl m-10 md:m-2 xl:m-10 mt-4 md:mt-6 xl:mt-0 pt-5" style="background-color: #EFF1F2;">
+      <div class="flex flex-col md:flex-row pt-0 sm:pt-8 lg:pt-0">
+        <div class="order-last lg:w-full xl:w-7/12 h-auto md:h-custom xl:h-auto rounded-3xl m-10 md:m-2 xl:m-10 mt-20 md:mt-6 xl:mt-0 pt-5" style="background-color: #EFF1F2;">
           <div class="flex flex-col md:flex-row md:justify-between items-center">
             <img class="h-8 mt-4 md:ml-20" src="../components/images/reallog.png" alt="">
             <Selector class="mt-4 md:mr-20" />
@@ -199,7 +199,7 @@ const menuItems = [
               <a class="text-gray-200 text-3xl font-normal">info@nesot.com.tr</a>
 
             </div>
-            <div class="flex space-x-2 mx-2 md:mx-10">
+            <div class="flex space-x-2 ml-4 sm:ml-0 mx-2 md:mx-10">
               <div
                 class="border border-white h-8 md:h-10 w-14  md:w-24 rounded-3xl flex justify-center items-center border-opacity-50 mt-5 mb-5 py-0 md:py-2 px-4 md:px-8">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 md:h-5 w-4 md:w-5" viewBox="0 0 512 512">
